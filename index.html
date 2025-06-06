@@ -4,84 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MARTA - Portfólio</title>
-  
-  <!-- Preload critical resources -->
-  <link rel="preload" href="images/01 Homepage/livrofrente_mesa.webp" as="image" fetchpriority="high">
-  <link rel="preload" href="fonts/PPMori-Regular.otf" as="font" type="font/otf" crossorigin>
-  <link rel="preload" href="fonts/MarundTrial-3002Corner.otf" as="font" type="font/otf" crossorigin>
-  
-  <!-- Critical CSS inline (move the most important CSS here) -->
-  <style>
-    /* Critical CSS - Above the fold styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'PPMori', sans-serif;
-    }
-    
-    body {
-      background-color: #ffffff;
-      color: #333;
-    }
-    
-    .hero-text {
-      width: 100%;
-      padding: 120px 90px 80px 90px;
-      margin-bottom: 30px;
-    }
-    
-    .hero-text p {
-      max-width: 90%;
-      margin: 0 auto;
-      font-size: 32px;
-      line-height: 1.3;
-      text-align: center;
-      font-weight: normal;
-      color: #000;
-    }
-    
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      grid-auto-rows: auto;
-      gap: 24px;
-      padding: 0 90px;
-      margin-bottom: 40px;
-    }
-    
-    .grid-item {
-      position: relative;
-      border-radius: 24px;
-      overflow: hidden;
-      cursor: pointer;
-    }
-    
-    .item-1 {
-      grid-column: span 6;
-      aspect-ratio: 16 / 9;
-    }
-    
-    .grid-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  </style>
-  
-  <!-- Non-critical CSS -->
-  <link rel="stylesheet" href="index.min.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="search.min.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="custom-cursor.min.css" media="print" onload="this.media='all'">
-  
-  <!-- Fallback for non-JS -->
-  <noscript>
-    <link rel="stylesheet" href="index.min.css">
-    <link rel="stylesheet" href="search.min.css">
-    <link rel="stylesheet" href="custom-cursor.min.css">
-  </noscript>
+  <link rel="stylesheet" href="index.min.css">
+  <link rel="stylesheet" href="search.min.css">
+  <link rel="stylesheet" href="custom-cursor.min.css">
 </head>
 <body>
+
   
   <header>
     <!-- Logo à esquerda -->
@@ -105,12 +33,12 @@
       <!-- Ícone de pesquisa -->
       <div class="search-container">
         <div class="search-icon">
-          <svg class="custom-search-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
-            <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
+            <svg class="custom-search-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
         </div>
-      </div>
+    </div>
       
       <!-- Hamburger (só aparece em mobile) -->
       <div class="hamburger">
@@ -152,7 +80,7 @@
   <!-- Menu mobile fullscreen -->
   <div class="mobile-nav">
     <div class="close-btn">✕</div>
-    <a href="about-me.html">about me</a>
+    <a href="#">about me</a>
     <a href="index.html">work</a>
   </div>
 
@@ -163,28 +91,21 @@
   </div>
   
   <div class="grid-container">
+
+    
     <!-- Primeira linha -->
     <div class="grid-item item-1">
-      <!-- LCP image - highest priority -->
-      <img src="images/01 Homepage/livrofrente_mesa.webp" 
-           alt="Livro azul 'Arte da Mesa'" 
-           width="800" 
-           height="450"
-           fetchpriority="high"
-           decoding="sync">
+      <img src="images/01-Homepage/livrofrente_mesa.webp" alt="Livro azul 'Arte da Mesa'" loading="lazy" width="800" height="450">
       <div class="overlay">
         <h3>A Arte da Mesa</h3>
         <p>Rebranding a book on table etiquette, transforming tradition into a modern, visually engaging experience.</p>
       </div>
       <a href="A-Arte-da-Mesa.html" class="grid-link" aria-label="Ver projeto A Arte da Mesa"></a>
     </div>
-    
     <div class="grid-item item-2">
-      <!-- Video with poster for faster loading -->
-      <video autoplay muted loop playsinline width="800" height="450" poster="images/01 Homepage/SpreadEducationSpreadLove.jpg">
-        <source src="images/01 Homepage/SpreadEducationSpreadLove.webm" type="video/webm">
-        <img src="images/01 Homepage/SpreadEducationSpreadLove.jpg" alt="Logo Spread Education, Spread Love" width="800" height="450">
-      </video>
+      <video autoplay muted loop playsinline width="800" height="450">
+  <source src="images/01-Homepage/SpreadEducationSpreadLove.webm" type="video/webm">
+  <!-- <img src="images/01-Homepage/SpreadEducationSpreadLove.jpg" alt="Logo Spread Education, Spread Love" loading="lazy" width="800" height="450"> -->
       <div class="overlay">
         <h3>Spread Education, Spread Love</h3>
         <p>Creating a collection that raises awareness for education and love, empowering young students' futures.</p>
@@ -192,43 +113,28 @@
       <a href="SpreadEducationSpreadLove.html" class="grid-link" aria-label="Ver projeto SpreadEducationSpreadLove"></a>
     </div>
     
-    <!-- Item PAEZ - largura total -->
+    <!-- Item PAEZ - largura total corrigido -->
     <div class="grid-item item-6">
-      <img src="images/09 PAEZ/padrão tomate.svg" 
-           alt="Padrão de tomate" 
-           loading="lazy" 
-           width="1200" 
-           height="150"
-           decoding="async">
+      <img src="images/09-PAEZ/padrao-tomate.svg" alt="Padrão de tomate" loading="lazy" width="1200" height="150">
       <div class="overlay">
         <h3>PAEZ - Coming Soon</h3>
         <p>Winning collection of the PAEZ x Belas-Artes Summer 2026 contest, celebrating a simple, mindful lifestyle connected to the earth through the raw texture and vibrancy of vegetables.</p>
       </div>
-      <a href="https://www.belasartes.ulisboa.pt/en/os-grandes-vencedores-do-concurso-paez-nas-belas-artes-2-0-marta-almeida-e-martim-carvalho/" class="grid-link" aria-label="Ver projeto PAEZ" rel="noopener"></a>
+      <a href="https://www.belasartes.ulisboa.pt/en/os-grandes-vencedores-do-concurso-paez-nas-belas-artes-2-0-marta-almeida-e-martim-carvalho/" class="grid-link" aria-label="Ver projeto PAEZ"></a>
     </div>
+    
     
     <!-- Segunda linha -->
     <div class="grid-item item-3">
-      <img src="images/06 FALP/Business Card_Mockup.webp" 
-           alt="Cartão de visita FALP" 
-           loading="lazy" 
-           width="800" 
-           height="450"
-           decoding="async">
+      <img src="images/06-FALP/Business-Card-Mockup.webp" alt="Cartão de visita FALP" loading="lazy" width="800" height="450">
       <div class="overlay">
         <h3>FALP</h3>
         <p>Visual identity for the Federation of Portuguese Language Lawyers, promoting legal cooperation among Lusophone countries and human rights.</p>
       </div>
       <a href="falp.html" class="grid-link" aria-label="Ver projeto FALP"></a>
     </div>
-    
     <div class="grid-item item-4">
-      <img src="images/01 Homepage/BenditoMockup-WWW-Wine_Bottle-04 copiar.webp" 
-           alt="Mariana&Felipe's Wedding" 
-           loading="lazy" 
-           width="800" 
-           height="900"
-           decoding="async">
+      <img src="images/01-Homepage/BenditoMockup-WWW-Wine_Bottle-04 copiar.webp" alt="Mariana&Felipe's Wedding" loading="lazy" width="800" height="900">
       <div class="overlay">
         <h3>Mariana & Felipe's Wedding</h3>
         <p>Visual identity for a summer wedding, blending hand-drawn illustrations and soft watercolors to capture the intimacy of the day.</p>
@@ -238,12 +144,7 @@
     
     <!-- Terceira linha -->
     <div class="grid-item item-5">
-      <img src="images/05 Underground/GIF_Underground copiar.gif" 
-           alt="Underground" 
-           loading="lazy" 
-           width="800" 
-           height="450"
-           decoding="async">
+      <img src="images/05-Underground/GIF-Underground.webm" alt="Underground" loading="lazy" width="800" height="450">
       <div class="overlay">
         <h3>Underground</h3>
         <p>A magazine honoring British underground design, reflecting on Peter Saville's transformative visual legacy and the ongoing innovation shaping the nation's creative identity.</p>
@@ -251,28 +152,17 @@
       <a href="Underground.html" class="grid-link" aria-label="Ver projeto Underground"></a>
     </div>
     
-    <!-- Quarta linha -->
+    <!-- Quarta linha - CORRIGIDO: removidas classes empty-item -->
     <div class="grid-item item-7">
-      <img src="images/08 MODUS/Banner-gif-1_site.gif" 
-           alt="Banner MODUS" 
-           loading="lazy" 
-           width="800" 
-           height="450"
-           decoding="async">
+      <img src="images/08-MODUS/Banner-gif-1_site.gif" alt="Banner MODUS" loading="lazy" width="800" height="450">
       <div class="overlay">
         <h3>MODUS</h3>
         <p>A fictional event for International Design Day that celebrates design as a practical, human-centered discipline, valuing function over form through clarity, humility, and purpose.</p>
       </div>
       <a href="modus.html" class="grid-link" aria-label="Ver projeto MODUS"></a>
     </div>
-    
     <div class="grid-item item-8">
-      <img src="images/10 fyted/TDMovieOut.0 2.webm" 
-           alt="fyted interactive experience" 
-           loading="lazy" 
-           width="800" 
-           height="450"
-           decoding="async">
+      <img src="images/10-fyted/TDMovieOut.webm" alt="" loading="lazy" width="800" height="450">
       <div class="overlay">
         <h3>fyted</h3>
         <p>A speculative interactive experience revealing how AI job interviews hide bias behind polite efficiency, exposing the human cost of automated hiring systems.</p>
@@ -281,39 +171,40 @@
     </div>
   </div>
   
-  <!-- Scripts with defer/async -->
-  <script src="homepage-script.min.js" defer></script>
-  <script src="search.min.js" defer></script>
-  <script src="custom-cursor.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" async></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.min.js"></script>
+  <script src="homepage-script.min.js"></script>
+  <script src="search.min.js"></script>
+  <script src="custom-cursor.min.js"></script>
 </body>
 
-<!-- Footer -->
+
+<!-- HTML do Footer Final -->
 <footer>
   <div class="interactive-footer">
-    <div class="footer-left">
-      <p>© 2025 marta bello pais de almeida</p>
-    </div>
-    
-    <!-- Center hover effect -->
-    <a href="mailto:martinhabpa@gmail.com" class="footer-center">
-      <div class="get-in-text-top">get in</div>
-      <div class="footer-line"></div>
-      <div class="get-in-text-bottom">touch</div>
+      <div class="footer-left">
+          <p>© 2025 marta bello pais de almeida</p>
+      </div>
+      
+      <!-- Center hover effect -->
+      <a href="mailto:martinhabpa@gmail.com" class="footer-center">
+        <div class="get-in-text-top">get in</div>
+        <div class="footer-line"></div>
+        <div class="get-in-text-bottom">touch</div>
     </a>
 
-    <!-- Mobile static version -->
-    <a href="mailto:martinhabpa@gmail.com" class="footer-center-mobile">
-      <span class="get-in-text-top-mobile">get in</span>
-      <div class="footer-line-mobile"></div>
-      <span class="get-in-text-bottom-mobile">touch</span>
-    </a>
-    
-    <div class="footer-right">
-      <a href="https://www.instagram.com/martabpaisdealmeida/" target="_blank" rel="noopener">instagram</a>
-      <a href="https://www.linkedin.com/in/marta-bello-pais-de-almeida/" target="_blank" rel="noopener">linkedin</a>
+      <!-- Mobile static version -->
+      <a href="mailto:martinhabpa@gmail.com" class="footer-center-mobile">
+        <span class="get-in-text-top-mobile">get in</span>
+        <div class="footer-line-mobile"></div>
+        <span class="get-in-text-bottom-mobile">touch</span>
+      </a>
+      
+      <div class="footer-right">
+        <a href="https://www.instagram.com/martabpaisdealmeida/" target="_blank">instagram</a>
+        <a href="https://www.linkedin.com/in/marta-bello-pais-de-almeida/" target="_blank">linkedin</a>
     </div>
   </div>
 </footer>
+
 
 </html>
