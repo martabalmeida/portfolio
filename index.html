@@ -80,7 +80,7 @@
   <!-- Menu mobile fullscreen -->
   <div class="mobile-nav">
     <div class="close-btn">✕</div>
-    <a href="#">about me</a>
+    <a href="about-me.css">about me</a>
     <a href="index.html">work</a>
   </div>
 
@@ -162,13 +162,16 @@
       <a href="modus.html" class="grid-link" aria-label="Ver projeto MODUS"></a>
     </div>
     <div class="grid-item item-8">
-      <img src="images/10-fyted/fyt1.mp4" alt="" loading="lazy" width="800" height="450">
-      <div class="overlay">
+    <video autoplay muted loop playsinline width="800" height="450">
+        <source src="images/10-fyted/fyt1.mp4" type="video/mp4">
+        <img src="images/10-fyted/fyt1.jpg" alt="fyted project preview" loading="lazy" width="800" height="450">
+    </video>
+    <div class="overlay">
         <h3>fyted</h3>
         <p>A speculative interactive experience revealing how AI job interviews hide bias behind polite efficiency, exposing the human cost of automated hiring systems.</p>
-      </div>
-      <a href="fyted.html" class="grid-link" aria-label="Ver projeto fyted"></a>
     </div>
+    <a href="fyted.html" class="grid-link" aria-label="Ver projeto fyted"></a>
+</div>
   </div>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
