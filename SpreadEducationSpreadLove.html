@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MARTA - Portfolio</title>
-    <link rel="stylesheet" href="SpreadEducationSpreadLove.min.css">
-    <link rel="stylesheet" href="search.min.css">
-    <link rel="stylesheet" href="project-navigation.min.css">
-    <link rel="stylesheet" href="custom-cursor.min.css">
-    <link rel="stylesheet" href="global-typography.css">
+    
+    <!-- PRELOAD RECURSOS CRÍTICOS -->
+    <link rel="preload" href="fonts/PPMori-Regular.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="fonts/PPMori-SemiBold.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="fonts/26A1MarundTrial-3002Corner.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="SpreadEducationSpreadLove.min.css" as="style">
+    
+    <!-- CSS com versioning -->
+    <link rel="stylesheet" href="SpreadEducationSpreadLove.min.css?v=1.0">
+    <link rel="stylesheet" href="search.min.css?v=1.0">
+    <link rel="stylesheet" href="project-navigation.min.css?v=1.0">
+    <link rel="stylesheet" href="custom-cursor.min.css?v=1.0">
+    <link rel="stylesheet" href="global-typography.css?v=1.0">
 </head>
 <body>
     <header>
@@ -16,8 +24,8 @@
         <div class="logo">
             <div class="logo-container">
                 <a href="index.html" class="logo-link">
-                    <img src="images/logo letras_preto.svg" alt="logo marta" class="logo-default">
-                    <img src="images/logo letras_preto.svg" alt="logo marta" class="logo-hover">
+                    <img src="images/logo letras_preto.svg" alt="logo marta" class="logo-default" loading="lazy" width="70" height="70">
+                    <img src="images/logo letras_preto.svg" alt="logo marta" class="logo-hover" loading="lazy" width="70" height="70">
                 </a>
             </div>
         </div>
@@ -87,7 +95,11 @@
     <main>
         <!-- Seção Hero -->
         <div class="hero-image">
-            <img src="images/03 Spread education, spread love/Gif_intro.webm" alt="Pessoa servindo vinho em uma mesa de jantar" />
+            <!-- Corrigi: era .webm (vídeo) mas estava como <img> -->
+            <video autoplay muted loop playsinline width="800" height="450" poster="images/03 Spread education, spread love/Gif_intro.jpg">
+                <source src="images/03 Spread education, spread love/Gif_intro.webm" type="video/webm">
+                <img src="images/03 Spread education, spread love/Gif_intro.jpg" alt="Pessoa servindo vinho em uma mesa de jantar" loading="lazy">
+            </video>
         </div>
         
         <!-- Seção do título e descrição -->
@@ -135,37 +147,37 @@
         <div class="photo-grid">
             <!-- First large image -->
             <div class="grid-item large">
-                <img src="images/03 Spread education, spread love/_R5A2043.webp" alt="Person running in a field" />
+                <img src="images/03 Spread education, spread love/_R5A2043.webp" alt="Person running in a field" loading="lazy" width="800" height="600" />
             </div>
             
             <!-- Two column images -->
             <div class="grid-row">
                 <div class="grid-item">
-                    <img src="images/03 Spread education, spread love/_R5A2432.webp" alt="Bag with pattern" />
+                    <img src="images/03 Spread education, spread love/_R5A2432.webp" alt="Bag with pattern" loading="lazy" width="400" height="600" />
                 </div>
                 <div class="grid-item">
-                    <img src="images/03 Spread education, spread love/_R5A2640.webp" alt="Woman standing by tree" />
+                    <img src="images/03 Spread education, spread love/_R5A2640.webp" alt="Woman standing by tree" loading="lazy" width="400" height="600" />
                 </div>
             </div>
             
             <!-- Full width image -->
             <div class="grid-item large">
-                <img src="images/03 Spread education, spread love/_R5A2664.webp" alt="Couple by brick wall" />
+                <img src="images/03 Spread education, spread love/_R5A2664.webp" alt="Couple by brick wall" loading="lazy" width="800" height="600" />
             </div>
             
             <!-- Three column images -->
             <div class="grid-row">
                 <div class="grid-item">
-                    <img src="images/03 Spread education, spread love/_R5A2544.webp" alt="Person in doorway" />
+                    <img src="images/03 Spread education, spread love/_R5A2544.webp" alt="Person in doorway" loading="lazy" width="400" height="600" />
                 </div>
                 <div class="grid-item">
-                    <img src="images/03 Spread education, spread love/_R5A2377.webp" alt="Person carrying bag" />
+                    <img src="images/03 Spread education, spread love/_R5A2377.webp" alt="Person carrying bag" loading="lazy" width="400" height="600" />
                 </div>
             </div>
             
             <!-- Last large image -->
             <div class="grid-item large">
-                <img src="images/03 Spread education, spread love/_R5A2290.webp" alt="People walking in field" />
+                <img src="images/03 Spread education, spread love/_R5A2290.webp" alt="People walking in field" loading="lazy" width="800" height="600" />
             </div>
         </div>
     </main>
@@ -206,8 +218,9 @@
         </div>
     </div>
 </footer>
-    <script src="homepage-script.min.js"></script>
-    <script src="search.min.js"></script>
-    <script src="custom-cursor.min.js"></script>
+    <!-- JavaScript com defer e versioning -->
+    <script src="homepage-script.min.js?v=1.0" defer></script>
+    <script src="search.min.js?v=1.0" defer></script>
+    <script src="custom-cursor.min.js?v=1.0" defer></script>
 </body>
 </html>
