@@ -279,7 +279,7 @@ main {
     justify-content: center;
 }
 
-.spread-large video {
+.spread-large img {
     width: 100%;
     height: auto;
     object-fit: contain;
