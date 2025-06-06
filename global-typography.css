@@ -1,0 +1,109 @@
+/* ===== GLOBAL TYPOGRAPHY STANDARDIZATION ===== */
+:root {
+    --text-color: #000;
+    --accent-color: #ED6D2E;
+    --font-base: 14px;
+    --font-section: 16px;
+    --font-title: 28px;
+    --font-special: 20px;
+    --line-text: 1.6;
+    --line-tight: 1.4;
+    --line-title: 1.2;
+    --line-loose: 1.3;
+}
+
+/* GLOBAL TYPOGRAPHY */
+p {
+    font-size: var(--font-base);
+    line-height: var(--line-text);
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+p:last-child { margin-bottom: 0; }
+
+h2 {
+    font-size: var(--font-section);
+    font-weight: 600;
+    line-height: var(--line-tight);
+    color: var(--text-color);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: var(--font-base);
+    font-weight: 600;
+    line-height: var(--line-tight);
+    color: var(--text-color);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+h1, .project-title {
+    font-size: var(--font-title);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    line-height: var(--line-title);
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+/* SECTION CONTAINERS - Only spacing */
+.project-solution,
+.project-scope,
+.project-credits,
+.description-text {
+    margin-bottom: 30px;
+}
+
+/* SPECIAL ELEMENTS */
+.lineup {
+    font-size: var(--font-special);
+    line-height: var(--line-loose);
+    font-weight: 200;
+    color: var(--text-color);
+    margin: 20px 0;
+    max-width: 470px;
+}
+
+.warning-note {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    color: #856404;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+/* LINKS */
+a {
+    color: var(--text-color);
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+.project-links a {
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    :root {
+        --font-title: 24px;
+        --font-special: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --font-base: 13px;
+        --font-section: 14px;
+        --font-title: 20px;
+        --font-special: 16px;
+    }
+}
