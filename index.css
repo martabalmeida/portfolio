@@ -251,19 +251,22 @@ header.with-background {
 /* Grid item layouts */
 .item-1 {
   grid-column: span 6;
-  grid-row: span 1;
   aspect-ratio: 16 / 9;
 }
 
 .item-2 {
   grid-column: span 6;
-  grid-row: span 1;
   aspect-ratio: 16 / 9;
+}
+
+.item-6 {
+  grid-column: span 12;
+  height: 150px;
+  aspect-ratio: unset;
 }
 
 .item-3 {
   grid-column: span 6;
-  grid-row: span 1;
   aspect-ratio: 16 / 9;
 }
 
@@ -275,25 +278,16 @@ header.with-background {
 
 .item-5 {
   grid-column: span 6;
-  grid-row: span 1;
   aspect-ratio: 16 / 9;
-}
-
-.item-6 {
-  grid-column: span 12;
-  height: 150px;
-  aspect-ratio: unset;
 }
 
 .item-7 {
   grid-column: span 6;
-  grid-row: span 1;
   aspect-ratio: 16 / 9;
 }
 
 .item-8 {
   grid-column: span 6;
-  grid-row: span 1;
   aspect-ratio: 16 / 9;
 }
 
@@ -550,8 +544,10 @@ footer {
 }
 
 /* Special image handling */
-.item-5 img[src*="GIF_Underground"] {
+.item-5 img[src*="GIF_Underground"],
+.item-5 img[src*="gif"] {
   object-fit: scale-down !important;
+  background-color: #f5f5f5;
 }
 
 /* Mobile responsive styles */
