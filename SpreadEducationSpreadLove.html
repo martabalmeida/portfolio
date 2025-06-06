@@ -87,10 +87,14 @@
     <main>
         <!-- Seção Hero -->
         <div class="hero-image">
-            <video class="hero-video" autoplay muted loop playsinline>
-                <source src="images/03 Spread education, spread love/gif-hero.mp4" type="video/mp4">
-                <img src="images/03 Spread education, spread love/gif-hero-fallback.jpg" alt="Pessoa servindo vinho em uma mesa de jantar" loading="lazy">
+            <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+                <source src="images/03-SESL/gif-hero.mp4" type="video/mp4">
+                <source src="images/03-SESL/gif-hero.webm" type="video/webm">
+                <!-- Fallback image -->
+                Your browser does not support the video tag.
             </video>
+            <!-- Imagem de fallback caso o vídeo não carregue -->
+            <img src="images/03-SESL/gif-hero-fallback.jpg" alt="Pessoa servindo vinho em uma mesa de jantar" class="hero-fallback" loading="lazy">
         </div>
         
         <!-- Seção do título e descrição -->
@@ -128,11 +132,6 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Content based on the image
-        <div class="text-section">
-            <h2>LOREM IPSUM</h2>
-        </div> -->
         
         <!-- Image grid section -->
         <div class="photo-grid">
@@ -189,28 +188,68 @@
             <span class="nav-arrow-icon">></span>
         </a>
     </div>
+
     <!-- Footer do Homepage -->
-<footer>
-    <div class="interactive-footer">
-        <div class="footer-left">
-            <p>© 2025 marta bello pais de almeida</p>
+    <footer>
+        <div class="interactive-footer">
+            <div class="footer-left">
+                <p>© 2025 marta bello pais de almeida</p>
+            </div>
+            
+            <!-- Center hover effect -->
+            <a href="mailto:martinhabpa@gmail.com" class="footer-center">
+                <div class="get-in-text-top">get in</div>
+                <div class="footer-line"></div>
+                <div class="get-in-text-bottom">touch</div>
+            </a>
+            
+            <div class="footer-right">
+                <a href="https://www.instagram.com/martabpaisdealmeida/" target="_blank">instagram</a>
+                <a href="https://www.linkedin.com/in/marta-bello-pais-de-almeida/" target="_blank">linkedin</a>
+            </div>
         </div>
-        
-        <!-- Center hover effect -->
-        <a href="mailto:martinhabpa@gmail.com" class="footer-center">
-            <div class="get-in-text-top">get in</div>
-            <div class="footer-line"></div>
-            <div class="get-in-text-bottom">touch</div>
-        </a>
-        
-        <div class="footer-right">
-            <a href="https://www.instagram.com/martabpaisdealmeida/" target="_blank">instagram</a>
-            <a href="https://www.linkedin.com/in/marta-bello-pais-de-almeida/" target="_blank">linkedin</a>
-        </div>
-    </div>
-</footer>
+    </footer>
+
     <script src="homepage-script.js"></script>
     <script src="search.js"></script>
     <script src="custom-cursor.js"></script>
+
+    <!-- Script adicional para o vídeo hero -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const video = document.querySelector('.hero-video');
+            const fallbackImg = document.querySelector('.hero-fallback');
+            
+            if (video) {
+                // Tentar reproduzir o vídeo
+                const playPromise = video.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        // Vídeo está a reproduzir, esconder fallback
+                        if (fallbackImg) {
+                            fallbackImg.style.display = 'none';
+                        }
+                    }).catch(error => {
+                        // Erro ao reproduzir vídeo, mostrar fallback
+                        console.log('Video autoplay failed:', error);
+                        if (fallbackImg) {
+                            fallbackImg.style.display = 'block';
+                        }
+                        video.style.display = 'none';
+                    });
+                }
+                
+                // Listener para erros de carregamento
+                video.addEventListener('error', function() {
+                    console.log('Video loading error');
+                    if (fallbackImg) {
+                        fallbackImg.style.display = 'block';
+                    }
+                    video.style.display = 'none';
+                });
+            }
+        });
+    </script>
 </body>
 </html>
