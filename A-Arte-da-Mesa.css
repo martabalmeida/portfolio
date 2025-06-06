@@ -375,6 +375,17 @@ nav a {
   margin-bottom: 40px;
 }
 
+.digital-concept-container video {
+  width: 100%;
+  max-width: 1000px; /* ou o que fizer sentido para o teu layout */
+  height: auto;
+  border-radius: 12px; /* opcional, só se quiseres cantos arredondados */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* sombra suave */
+  display: block;
+  margin: 0 auto; /* centraliza o vídeo */
+}
+
+
 .digital-concept-container {
   width: 100%;
   overflow: hidden;
