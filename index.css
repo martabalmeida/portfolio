@@ -283,7 +283,6 @@ header.with-background {
   grid-column: span 12;
   height: 150px;
   aspect-ratio: unset;
-  margin: 30px 0;
 }
 
 /* CORRIGIDO: item-7 e item-8 agora seguem a mesma lógica */
