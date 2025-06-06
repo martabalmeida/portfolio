@@ -107,6 +107,20 @@ const portfolioProjects = [
       tags: ["brand identity", "visual system", "print design", "typography"],
       link: "falp.html",
       image: "images/card.jpg"
+  },
+  {
+      title: "MODUS",
+      description: "A fictional event for International Design Day that celebrates design as a practical, human-centered discipline.",
+      tags: ["event identity", "visual system", "concept development", "poster design"],
+      link: "modus.html",
+      image: "images/08 MODUS/Banner-gif-1_site.gif"
+  },
+  {
+      title: "fyted",
+      description: "A speculative interactive experience revealing how AI job interviews hide bias behind polite efficiency.",
+      tags: ["interaction design", "ux narrative", "user research", "front-end development", "critical design"],
+      link: "fyted.html",
+      image: "images/10 fyted/TDMovieOut.0.webm"
   }
 ];
 
@@ -225,39 +239,54 @@ function initializeSearch() {
 // Initialize search when DOM is loaded
 document.addEventListener('DOMContentLoaded', initializeSearch);
 
+// Custom cursor functionality (without GSAP dependency)
 document.addEventListener("DOMContentLoaded", () => {
-    const cursor = document.createElement("div");
-    cursor.classList.add("custom-cursor");
-    document.body.appendChild(cursor);
-  
-    // Segue o rato
-    document.addEventListener("mousemove", (e) => {
-      gsap.to(cursor, {
-        duration: 0.2,
-        x: e.clientX,
-        y: e.clientY,
-        ease: "power2.out"
-      });
-    });
-  
-    // Efeito ao clicar
-    document.addEventListener("mousedown", () => {
-      cursor.classList.add("click");
-    });
-  
-    document.addEventListener("mouseup", () => {
-      cursor.classList.remove("click");
-    });
-  
-    // Opcional: esconder cursor em links ou elementos específicos
-    const links = document.querySelectorAll("a, button, input");
-    links.forEach(el => {
-      el.addEventListener("mouseenter", () => {
-        gsap.to(cursor, { scale: 1.5, duration: 0.3 });
-      });
-      el.addEventListener("mouseleave", () => {
-        gsap.to(cursor, { scale: 1, duration: 0.3 });
-      });
-    });
-  });
-  
+    // Only add custom cursor on desktop devices
+    if (window.innerWidth > 768) {
+        const cursor = document.createElement("div");
+        cursor.classList.add("custom-cursor");
+        document.body.appendChild(cursor);
+      
+        let mouseX = 0;
+        let mouseY = 0;
+        let cursorX = 0;
+        let cursorY = 0;
+      
+        // Track mouse movement
+        document.addEventListener("mousemove", (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+      
+        // Smooth cursor animation using requestAnimationFrame
+        function animateCursor() {
+            // Smooth interpolation
+            cursorX += (mouseX - cursorX) * 0.2;
+            cursorY += (mouseY - cursorY) * 0.2;
+            
+            cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+      
+        // Click effect
+        document.addEventListener("mousedown", () => {
+            cursor.style.transform += " scale(0.8)";
+        });
+      
+        document.addEventListener("mouseup", () => {
+            cursor.style.transform = cursor.style.transform.replace(" scale(0.8)", "");
+        });
+      
+        // Hover effects for interactive elements
+        const interactiveElements = document.querySelectorAll("a, button, input, .grid-item, .search-icon, .hamburger");
+        interactiveElements.forEach(el => {
+            el.addEventListener("mouseenter", () => {
+                cursor.classList.add("hover");
+            });
+            el.addEventListener("mouseleave", () => {
+                cursor.classList.remove("hover");
+            });
+        });
+    }
+});
