@@ -1,0 +1,1013 @@
+@font-face {
+    font-family: 'PPMori';
+    src: url('fonts/PPMori-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'PPMori';
+    src: url('fonts/PPMori-SemiBold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MarundTrial';
+    src: url('fonts/26A1MarundTrial-3002Corner.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PPMori', sans-serif;
+}
+  
+body {
+    margin: 0 auto;
+    background-color: #fff;
+    color: #000;
+}
+
+main {
+    padding: 0 160px; /* Padding lateral uniforme */
+}
+  
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 90px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Logo styles from homepage */
+.logo-container {
+    position: relative;
+    display: inline-block;
+}
+
+.logo-default,
+.logo-hover {
+    height: 70px;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.logo-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.logo-container:hover .logo-default {
+    opacity: 0;
+}
+
+.logo-container:hover .logo-hover {
+    opacity: 1;
+}
+
+/* Right elements grouping */
+.right-elements {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.desktop-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.desktop-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'MarundTrial', 'PPMori', sans-serif;
+  }
+
+/* Legacy nav for compatibility */
+nav {
+    display: flex;
+    gap: 20px;
+}
+  
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 600;
+}
+  
+.logo {
+    display: flex;
+    align-items: center;
+}
+  
+.logo img {
+    height: 70px;
+    display: block;
+}
+  
+.search-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.search-icon img {
+    height: 24px;
+    width: auto;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 200;
+}
+
+.hamburger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Mobile navigation styles */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: #ED6D2E; /* Mudança: fundo laranja */
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 150;
+    transition: right 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+  }
+
+.mobile-nav.active {
+    right: 0;
+}
+
+.mobile-nav a {
+    margin: 15px 0;
+    font-size: 24px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: 'MarundTrial', 'PPMori', sans-serif;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.4s ease;
+    transition-delay: 0.2s;
+  }
+
+.mobile-nav.active a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff; /* Mudança: ícone branco */
+    opacity: 0;
+    transition: all 0.3s ease;
+    transition-delay: 0.3s;
+  }
+
+.mobile-nav.active .close-btn {
+    opacity: 1;
+}
+
+/* Hamburger animation */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+  
+/* Hero Image - Altura aumentada para 650px */
+.hero-image {
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+    margin: 20px 0 60px 0;
+}
+  
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+/* Título e Descrição do Projeto */
+.project-header {
+    padding: 20px 0;
+    margin-bottom: 60px;
+}
+
+/* Wrapper para o layout de duas colunas */
+.content-wrapper {
+    display: flex;
+    width: 100%;
+    gap: 60px;
+}
+
+/* Coluna do título - à esquerda */
+.title-column {
+    width: 50%;
+}
+
+/* Coluna do conteúdo - à direita */
+.content-column {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Para o título principal */
+.project-title {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+/* Para o texto de descrição */
+.description-text {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Para os créditos do projeto */
+.project-solution {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #000;
+}
+.project-scope {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #000;
+}
+  
+/* Seções e Títulos */
+.section-title {
+    font-weight: semi-bold;
+    color: #333;
+    font-size: 1.17EM;
+    padding-bottom: 5px;
+}
+  
+/* Galeria de 2 imagens lado a lado */
+.gallery {
+    width: 100%;
+    height: 650px;
+    overflow: hidden;
+    margin-bottom: 70px;
+    padding-bottom: 20px;
+}
+  
+.gallery-item {
+    width: 100%;
+    height: 100%;
+}
+  
+.gallery-item img {
+    width: 100%;
+    height: 700px;
+    object-fit: contain;
+}
+
+/* Galeria complexa com várias linhas */
+.complex-gallery {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+  
+/* Estilos comuns para todas as linhas da galeria */
+.gallery-row {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+}
+  
+/* Linha superior com 2 imagens */
+.top-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    height: 384px;
+}
+  
+.top-row .gallery-item {
+    height: 100%;
+    overflow: hidden;
+}
+  
+.top-row img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+/* Linha do meio com o banner e código de cor */
+.middle-row {
+    display: flex;
+    gap: 10px;
+    height: 185px;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+  
+.gallery-cell.mf-logo {
+    min-width: 177px;
+    width: 177px;
+    height: 100%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.gallery-cell.mariana-banner {
+    min-width: 300px;
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.gallery-cell.mariana-banner img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+  
+.gallery-cell.color-code-container {
+    min-width: 150px;
+    width: 333px;
+    max-width: 333px;
+    height: 100%;
+    flex-shrink: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.color-code-container img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Linha inferior com 3 imagens */
+.bottom-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    height: 384px;
+}
+  
+.bottom-row .gallery-item {
+    height: 100%;
+    overflow: hidden;
+}
+  
+.bottom-row img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+/* Imagem de vinho final - altura aumentada para 650px */
+.wine-image {
+    width: 100%;
+    height: 100%
+}
+  
+.wine-image img {
+    width: 100%;
+    height: 750px;
+    object-fit: cover;
+}
+
+/* Back to top button */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: translateY(20px);
+    z-index: 9999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.back-to-top-btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.back-to-top-btn:hover {
+    background-color: #f5f5f5;
+}
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 30px; /* Padding menor para mobile */
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    main {
+        padding: 0 30px; /* Padding menor para mobile */
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .title-column,
+    .content-column {
+        width: 100%;
+    }
+    
+    .gallery, .hero-image, .wine-image {
+        height: 450px; /* Altura reduzida para mobile, mas mantendo proporção */
+    }
+}
+
+@media (max-width: 900px) {
+    header {
+        padding: 20px 20px; /* Padding ainda menor para telas muito pequenas */
+    }
+    
+    main {
+        padding: 0 20px; /* Padding ainda menor para telas muito pequenas */
+    }
+    
+    /* Linha superior em coluna */
+    .top-row {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        height: auto;
+    }
+    
+    .top-row .gallery-item {
+        width: 100%;
+        height: 250px;
+    }
+    
+    /* Linha do meio centralizada horizontalmente */
+    .middle-row {
+        height: auto;
+        flex-direction: row;
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0;
+        width: 100%;
+    }
+    
+    .gallery-cell.mf-logo {
+        width: 20%;
+        height: 70px;
+        min-width: 70px;
+        max-width: 90px;
+    }
+    
+    .gallery-cell.mariana-banner {
+        width: 45%;
+        height: 70px;
+        max-width: 200px;
+    }
+    
+    .gallery-cell.color-code-container {
+        width: 25%;
+        height: 70px;
+        max-width: 120px;
+    }
+    
+    /* Linha inferior em coluna */
+    .bottom-row {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        height: auto;
+    }
+    
+    .bottom-row .gallery-item {
+        width: 100%;
+        height: 250px;
+    }
+    
+    /* Garante que as imagens se ajustem corretamente */
+    .gallery-cell img,
+    .gallery-item img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* Para telas muito pequenas */
+@media (max-width: 480px) {
+    .middle-row {
+        gap: 5px;
+    }
+    
+    .gallery-cell.mf-logo {
+        min-width: 60px;
+        height: 60px;
+    }
+    
+    .gallery-cell.mariana-banner,
+    .gallery-cell.color-code-container {
+        height: 60px;
+    }
+    
+    .top-row .gallery-item,
+    .bottom-row .gallery-item {
+        height: 200px;
+    }
+    
+    .hero-image, .wine-image {
+        height: 350px; /* Altura adaptada para telas muito pequenas */
+    }
+    
+    nav {
+        gap: 10px;
+    }
+    
+    nav a {
+        font-size: 12px;
+    }
+    
+    .logo img {
+        max-height: 30px;
+    }
+
+    .desktop-nav a {
+        font-size: 20px;
+    }
+    
+    .logo-default,
+    .logo-hover {
+        height: 50px;
+    }
+}
+
+/* Hover effects for navigation links and search icon */
+.desktop-nav a:hover {
+    color: #ED6D2E;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav a:hover {
+    color: #ffffff; /* Mudança: mantém branco */
+    opacity: 0.8; /* Mudança: transparência no hover */
+    transition: all 0.1s ease;
+  }
+  
+
+/* Search icon hover effect - targeting the image directly */
+.search-icon:hover img {
+    filter: brightness(0) saturate(100%) invert(53%) sepia(88%) saturate(1952%) hue-rotate(14deg) brightness(95%) contrast(89%);
+    transition: filter 0.1s ease;
+}
+
+/* Ensure smooth transitions */
+.desktop-nav a,
+.mobile-nav a {
+    transition: color 0.1s ease;
+}
+
+.search-icon img {
+    transition: filter 0.1s ease;
+}
+/* SVG Search Icon Styling */
+.custom-search-svg {
+    width: 24px !important;
+    height: 24px !important;
+    fill: none !important;
+    transition: all 0.1s ease !important;
+}
+
+.custom-search-svg circle,
+.custom-search-svg path {
+    stroke: #333 !important;
+    stroke-width: 2px !important;
+    stroke-linecap: round;
+    transition: all 0.1s ease !important;
+}
+
+.search-icon:hover .custom-search-svg circle,
+.search-icon:hover .custom-search-svg path {
+    stroke: #ED6D2E !important;
+    stroke-width: 3px !important;
+}
+
+/* Footer Styles - EXATAMENTE IGUAL AO INDEX.HTML */
+footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    height: 200px;
+    padding: 0 90px;
+    z-index: 1000;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 30px;
+    text-decoration: none !important;
+  }
+  
+  .interactive-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+  }
+  
+  .footer-left p {
+    color: #333;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+    font-family: 'MarundTrial', 'PPMori', sans-serif;
+  }
+  
+  .footer-right {
+    display: flex;
+    gap: 24px;
+  }
+  
+  .footer-right a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: normal;
+    transition: opacity 0.2s ease;
+    font-family: 'MarundTrial', 'PPMori', sans-serif;
+  }
+  
+  .footer-right a:hover {
+    opacity: 0.7;
+  }
+  
+  .footer-center {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none !important;
+  }
+  
+  .footer-line {
+    width: 500px;
+    height: 5px;
+    background-color: #333;
+    transition: all 0.2s ease;
+  }
+  
+  .get-in-text-top,
+  .get-in-text-bottom {
+    font-size: 64px;
+    font-weight: normal;
+    color: #333;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    line-height: 1;
+    font-family: 'MarundTrial', 'PPMori', sans-serif;
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+  
+  .footer-center:hover .get-in-text-top,
+  .footer-center:hover .get-in-text-bottom {
+    opacity: 1;
+  }
+  
+  .footer-center:hover .footer-line {
+    width: 520px;
+  }
+  
+  .footer-center-mobile {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 30px;
+    text-decoration: none !important;
+    color: #333;
+  }
+  
+  .footer-line-mobile {
+    width: 250px;
+    height: 3px;
+    background-color: #333;
+  }
+  
+  .get-in-text-top-mobile,
+  .get-in-text-bottom-mobile {
+    font-size: 40px;
+    font-weight: normal;
+    color: #333;
+    line-height: 1;
+    font-family: 'MarundTrial', 'PPMori', sans-serif;
+    text-decoration: none !important;
+    border-bottom: none !important;
+    border: none;
+    outline: none;
+    background: none;
+  }
+  
+  footer *,
+  .footer-center,
+  .footer-center-mobile,
+  .footer-center *,
+  .footer-center-mobile * {
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+  
+  /* Back to top button */
+  .back-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    transform: translateY(20px);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .back-to-top-btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .back-to-top-btn:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* RESPONSIVE - TABLET IGUAL AO MOBILE */
+  @media (max-width: 768px) {
+    footer {
+      height: auto;
+      min-height: 250px;
+      padding: 60px 30px 20px 30px; /* Padding lateral maior que mobile */
+      display: block;
+    }
+    
+    .interactive-footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0;
+      height: 100%;
+      justify-content: center;
+      padding-top: 20px;
+    }
+    
+    .footer-center {
+      display: none;
+    }
+    
+    .footer-center-mobile {
+      display: flex;
+      order: 1;
+      text-decoration: none !important;
+      margin-bottom: 40px;
+    }
+    
+    /* Show mobile footer in hover state always */
+    .footer-center-mobile .get-in-text-top-mobile,
+    .footer-center-mobile .get-in-text-bottom-mobile {
+      text-decoration: none !important;
+      border-bottom: none !important;
+      font-size: 40px;
+      font-weight: normal;
+      color: #333;
+      line-height: 1;
+      font-family: 'MarundTrial', 'PPMori', sans-serif;
+      opacity: 1 !important;
+      display: block !important;
+    }
+    
+    .footer-line-mobile {
+      width: 250px;
+      height: 3px;
+      background-color: #333;
+    }
+    
+    .footer-left {
+      order: 3;
+      margin-top: 0;
+    }
+    
+    .footer-right {
+      order: 4;
+      margin-top: 15px;
+      justify-content: center;
+      gap: 30px;
+    }
+    
+    .footer-left p,
+    .footer-right a {
+      font-size: 12px;
+    }
+    
+    .back-to-top-btn {
+      width: 40px;
+      height: 40px;
+      bottom: 20px;
+      right: 20px;
+    }
+    
+    .back-to-top-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    footer {
+      height: auto;
+      min-height: 250px;
+      padding: 60px 20px 20px 20px; /* Reduced bottom padding */
+      display: block;
+    }
+    
+    .interactive-footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0;
+      height: 100%;
+      justify-content: center; /* Changed to center */
+      padding-top: 20px;
+    }
+    
+    .footer-center {
+      display: none;
+    }
+    
+    .footer-center-mobile {
+      display: flex;
+      order: 1;
+      text-decoration: none !important;
+      margin-bottom: 40px;
+    }
+    
+    /* Show mobile footer in hover state always */
+    .footer-center-mobile .get-in-text-top-mobile,
+    .footer-center-mobile .get-in-text-bottom-mobile {
+      text-decoration: none !important;
+      border-bottom: none !important;
+      font-size: 40px;
+      font-weight: normal;
+      color: #333;
+      line-height: 1;
+      font-family: 'MarundTrial', 'PPMori', sans-serif;
+      opacity: 1 !important; /* Force always visible */
+      display: block !important;
+    }
+    
+    .footer-line-mobile {
+      width: 250px;
+      height: 3px;
+      background-color: #333;
+    }
+    
+    .footer-left {
+      order: 3;
+      margin-top: 0;
+    }
+    
+    .footer-right {
+      order: 4;
+      margin-top: 15px;
+      justify-content: center;
+      gap: 30px;
+    }
+    
+    .footer-left p,
+    .footer-right a {
+      font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    footer {
+      min-height: 230px;
+      padding: 50px 15px 25px 15px;
+    }
+    
+    .interactive-footer {
+      padding-top: 15px;
+    }
+    
+    .footer-center-mobile {
+      margin-bottom: 35px;
+    }
+    
+    .footer-line-mobile {
+      width: 180px;
+      height: 2px;
+    }
+    
+    .get-in-text-top-mobile,
+    .get-in-text-bottom-mobile {
+      font-size: 32px;
+      text-decoration: none !important;
+      border-bottom: none !important;
+    }
+    
+    .footer-left p,
+    .footer-right a {
+      font-size: 11px;
+    }
+    
+    .footer-right {
+      gap: 20px;
+      margin-top: 12px;
+    }
+  }
