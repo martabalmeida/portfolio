@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_3" data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #5c68ff;
+      }
+
+      .cls-3 {
+        fill: #f04118;
+      }
+
+      .cls-4, .cls-5 {
+        font-size: 90.55px;
+      }
+
+      .cls-4, .cls-5, .cls-6 {
+        fill: #fff;
+        font-family: PPMori-SemiBold, 'PP Mori';
+        font-weight: 600;
+      }
+
+      .cls-4, .cls-7 {
+        letter-spacing: 0em;
+      }
+
+      .cls-8 {
+        letter-spacing: -.09em;
+      }
+
+      .cls-9 {
+        letter-spacing: -.07em;
+      }
+
+      .cls-10 {
+        letter-spacing: 0em;
+      }
+
+      .cls-6 {
+        font-size: 67.91px;
+      }
+
+      .cls-11 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-12 {
+        letter-spacing: .01em;
+      }
+
+      .cls-13 {
+        letter-spacing: .01em;
+      }
+
+      .cls-14 {
+        letter-spacing: 0em;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-1" x="231.31" y="98.28" width="1443.87" height="877.92"/>
+    </clipPath>
+  </defs>
+  <rect class="cls-3" x="-25.22" y="-33.23" width="1970.44" height="1147.58"/>
+  <g>
+    <g class="cls-11">
+      <polygon class="cls-2" points="231.31 98.28 231.31 357.28 968.59 505.03 231.31 652.76 231.31 976.2 1675.18 976.2 1675.18 847.31 515.8 847.31 1675.18 605.94 1675.18 234.86 1024.72 234.86 1024.72 172.77 1675.18 172.77 1675.18 98.28 231.31 98.28"/>
+    </g>
+    <text class="cls-5" transform="translate(278.12 381.21)"><tspan class="cls-7"><tspan x="0" y="0">MODUS</tspan></tspan><tspan class="cls-9" x="0" y="104.13">F</tspan><tspan class="cls-13" x="47.99" y="104.13">AZENDI</tspan></text>
+    <text class="cls-6" transform="translate(278.12 934.63)"><tspan class="cls-14" x="0" y="0">27 de abril 2</tspan><tspan class="cls-10" x="391.45" y="0">0</tspan><tspan class="cls-12" x="434.37" y="0">26</tspan></text>
+    <text class="cls-5" transform="translate(878.55 665.51)"><tspan class="cls-7"><tspan x="0" y="0">MODUS</tspan></tspan><tspan class="cls-7" x="0" y="104.13">COGI</tspan><tspan class="cls-8" x="239.51" y="104.13">T</tspan><tspan class="cls-13" x="289.4" y="104.13">ANDI</tspan></text>
+    <text class="cls-4" transform="translate(1152.59 209.22)"><tspan x="0" y="0">MODUS</tspan><tspan x="0" y="104.13">OPERANDI</tspan></text>
+  </g>
+</svg>

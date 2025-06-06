@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_3" data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 700 450">
+  <defs>
+    <clipPath id="clippath">
+      <rect x="31.1" y="31.1" width="637.81" height="387.81" style="fill: none;"/>
+    </clipPath>
+  </defs>
+  <rect x="-1" width="701" height="450" style="fill: #f04118;"/>
+  <g>
+    <g style="clip-path: url(#clippath);">
+      <polygon points="31.1 31.1 31.1 145.5 356.78 210.77 31.1 276.03 31.1 418.9 668.9 418.9 668.9 361.97 156.76 361.97 668.9 255.35 668.9 91.43 381.57 91.43 381.57 64 668.9 64 668.9 31.1 31.1 31.1" style="fill: #5c68ff;"/>
+    </g>
+    <text transform="translate(51.77 156.08)" style="fill: #fff; font-family: PPMori-SemiBold, &apos;PP Mori&apos;; font-size: 40px; font-weight: 600;"><tspan style="letter-spacing: .01em;"><tspan x="0" y="0">MODUS</tspan></tspan><tspan x="0" y="46" style="letter-spacing: -.07em;">F</tspan><tspan x="21.2" y="46" style="letter-spacing: 0em;">AZENDI</tspan></text>
+    <text transform="translate(51.77 400.54)" style="fill: #fff; font-family: PPMori-SemiBold, &apos;PP Mori&apos;; font-size: 30px; font-weight: 600;"><tspan x="0" y="0" style="letter-spacing: 0em;">27 de abril 2</tspan><tspan x="172.92" y="0" style="letter-spacing: 0em;">0</tspan><tspan x="191.88" y="0" style="letter-spacing: 0em;">26</tspan></text>
+    <text transform="translate(317 281.66)" style="fill: #fff; font-family: PPMori-SemiBold, &apos;PP Mori&apos;; font-size: 40px; font-weight: 600;"><tspan style="letter-spacing: .01em;"><tspan x="0" y="0">MODUS</tspan></tspan><tspan x="0" y="46" style="letter-spacing: .01em;">COGI</tspan><tspan x="105.8" y="46" style="letter-spacing: -.09em;">T</tspan><tspan x="127.84" y="46" style="letter-spacing: .01em;">ANDI</tspan></text>
+    <text transform="translate(438.06 80.1)" style="fill: #fff; font-family: PPMori-SemiBold, &apos;PP Mori&apos;; font-size: 40px; font-weight: 600; letter-spacing: .01em;"><tspan x="0" y="0">MODUS</tspan><tspan x="0" y="46">OPERANDI</tspan></text>
+  </g>
+  <text transform="translate(-1 -26.74)" style="fill: #fff; font-family: PPMori-SemiBold, &apos;PP Mori&apos;; font-size: 125px; font-weight: 600;"><tspan x="0" y="0" style="letter-spacing: 0em;">e</tspan><tspan x="73.75" y="0" style="letter-spacing: 0em;">s</tspan><tspan x="135.5" y="0" style="letter-spacing: 0em;">t</tspan><tspan x="185.38" y="0" style="letter-spacing: 0em;">e é o final</tspan></text>
+</svg>
