@@ -30,6 +30,7 @@ body {
   background-color: #ffffff;
   color: #333;
   position: relative;
+  min-height: 100vh;
 }
 
 /* Header with transparent background */
@@ -218,7 +219,7 @@ header.with-background {
   grid-auto-rows: auto;
   gap: 24px;
   padding: 0 90px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .grid-item {
@@ -251,44 +252,42 @@ header.with-background {
 /* Grid item layouts */
 .item-1 {
   grid-column: span 6;
-  aspect-ratio: 16 / 9;
+  height: 300px;
 }
 
 .item-2 {
   grid-column: span 6;
-  aspect-ratio: 16 / 9;
+  height: 300px;
 }
 
 .item-6 {
   grid-column: span 12;
   height: 150px;
-  aspect-ratio: unset;
 }
 
 .item-3 {
   grid-column: span 6;
-  aspect-ratio: 16 / 9;
+  height: 300px;
 }
 
 .item-4 {
   grid-column: span 6;
-  grid-row: span 2;
-  height: calc((100vw - 180px - 24px) / 12 * 6 * (9/16) * 2 + 24px);
+  height: 624px; /* 300px * 2 + 24px gap */
 }
 
 .item-5 {
   grid-column: span 6;
-  aspect-ratio: 16 / 9;
+  height: 300px;
 }
 
 .item-7 {
   grid-column: span 6;
-  aspect-ratio: 16 / 9;
+  height: 300px;
 }
 
 .item-8 {
   grid-column: span 6;
-  aspect-ratio: 16 / 9;
+  height: 300px;
 }
 
 /* Overlay colors for each item */
@@ -406,6 +405,7 @@ footer {
   display: flex;
   align-items: flex-end;
   padding-bottom: 30px;
+  margin-top: auto;
 }
 
 .interactive-footer {
@@ -567,13 +567,13 @@ footer {
     grid-template-columns: 1fr;
     padding: 0 30px;
     gap: 20px;
+    margin-bottom: 40px;
   }
 
   .grid-item {
     grid-column: span 1 !important;
     grid-row: span 1 !important;
     height: 280px !important;
-    aspect-ratio: unset !important;
     margin-bottom: 20px;
   }
 
@@ -663,6 +663,7 @@ footer {
 
   .grid-container {
     padding: 0 20px;
+    margin-bottom: 30px;
   }
 
   .grid-item {
@@ -686,8 +687,8 @@ footer {
 
   footer {
     height: auto;
-    min-height: 250px;
-    padding: 60px 20px 20px 20px;
+    min-height: 220px;
+    padding: 40px 20px 20px 20px;
     display: block;
   }
   
@@ -709,12 +710,12 @@ footer {
   .footer-center-mobile {
     display: flex;
     order: 1;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
   
   .footer-center-mobile .get-in-text-top-mobile,
   .footer-center-mobile .get-in-text-bottom-mobile {
-    font-size: 40px;
+    font-size: 36px;
     font-weight: normal;
     color: #333;
     line-height: 1;
@@ -722,7 +723,7 @@ footer {
   }
   
   .footer-line-mobile {
-    width: 250px;
+    width: 220px;
     height: 3px;
     background-color: #333;
   }
