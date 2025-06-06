@@ -360,46 +360,80 @@ nav a {
   transform-origin: center center; /* Foco no centro da imagem */
 }
 
-/* Digital concepts section com zoom nas imagens */
+/* Digital concepts section - Video otimizado */
 .digital-section {
   width: 100%;
   padding: 60px 0;
   margin-bottom: 120px;
   background-color: #d3f5a9; /* Light green background */
-  overflow: hidden; /* Para conter o zoom */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .digital-section h3 {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 40px;
+  text-align: center;
+  width: 100%;
+}
+
+.digital-concept-container {
+  width: 100%;
+  max-width: 1200px; /* Limita a largura máxima */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px; /* Padding lateral para não colar nas bordas */
 }
 
 .digital-concept-container video {
   width: 100%;
-  max-width: 1000px; /* ou o que fizer sentido para o teu layout */
   height: auto;
-  border-radius: 12px; /* opcional, só se quiseres cantos arredondados */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* sombra suave */
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   display: block;
-  margin: 0 auto; /* centraliza o vídeo */
 }
 
-
-.digital-concept-container {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
+/* Responsive para tablets */
+@media (max-width: 768px) {
+  .digital-section {
+    padding: 40px 0;
+    margin-bottom: 80px;
+  }
+  
+  .digital-concept-container {
+    padding: 0 15px;
+  }
+  
+  .digital-concept-container video {
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  }
 }
 
-.digital-concept-container img {
-  width: 112%; /* Zoom na imagem */
-  height: auto;
-  display: block;
-  object-fit: contain;
-  min-height: 600px;
-  transform: scale(1.12); /* Zoom adicional */
-  transform-origin: center center; /* Foco no centro */
+/* Responsive para smartphones */
+@media (max-width: 480px) {
+  .digital-section {
+    padding: 30px 0;
+    margin-bottom: 60px;
+  }
+  
+  .digital-section h3 {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  
+  .digital-concept-container {
+    padding: 0 10px;
+  }
+  
+  .digital-concept-container video {
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  }
 }
 
 /* Mobile mockups section com zoom nas imagens */
