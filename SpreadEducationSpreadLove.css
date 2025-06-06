@@ -238,6 +238,13 @@ nav a {
     object-fit: cover;
 }
   
+.hero-image video,
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* Título e Descrição do Projeto */
 .project-header {
     padding: 20px 0;
