@@ -1,7 +1,9 @@
-// Fixed Homepage Script - Remove duplicate portfolioProjects
+// Homepage Script - Fixed GSAP references and variable conflicts
 
-// Mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Homepage script loading...');
+    
+    // Mobile menu functionality
     const hamburger = document.querySelector('.hamburger');
     const mobileNav = document.querySelector('.mobile-nav');
     const closeBtn = document.querySelector('.close-btn');
@@ -52,15 +54,47 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Grid animations (only if GSAP is available)
-    if (typeof gsap !== 'undefined') {
-        // GSAP animations here
-        gsap.from('.grid-item', {
-            duration: 0.8,
-            y: 50,
-            opacity: 0,
-            stagger: 0.1,
-            ease: "power2.out"
-        });
+    // Grid animations - ONLY if GSAP is loaded and available
+    function initializeAnimations() {
+        // Check if GSAP is available
+        if (typeof gsap !== 'undefined' && gsap.from) {
+            try {
+                gsap.from('.grid-item', {
+                    duration: 0.8,
+                    y: 50,
+                    opacity: 0,
+                    stagger: 0.1,
+                    ease: "power2.out"
+                });
+                console.log('GSAP animations initialized');
+            } catch (error) {
+                console.log('GSAP animation failed, using fallback:', error);
+                fallbackAnimation();
+            }
+        } else {
+            console.log('GSAP not available, using fallback animation');
+            fallbackAnimation();
+        }
     }
+    
+    // Fallback animation without GSAP
+    function fallbackAnimation() {
+        const gridItems = document.querySelectorAll('.grid-item');
+        gridItems.forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            
+            setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+            }, index * 100);
+        });
+        console.log('Fallback animation applied');
+    }
+    
+    // Initialize animations after a short delay
+    setTimeout(initializeAnimations, 100);
+    
+    console.log('Homepage script loaded successfully');
 });

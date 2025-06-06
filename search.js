@@ -1,7 +1,5 @@
-// Clean Search Script - Single portfolioProjects definition
-
-// Portfolio projects data - SINGLE DEFINITION
-const portfolioProjects = [
+// Portfolio projects data - RENAMED to avoid conflict
+const portfolioSearchData = [
     {
         title: "A Arte da Mesa",
         description: "Rebranding a book on table etiquette, transforming tradition into a modern, visually engaging experience.",
@@ -21,39 +19,39 @@ const portfolioProjects = [
         description: "Visual identity for a summer wedding, blending hand-drawn illustrations and soft watercolors to capture intimacy.",
         tags: ["wedding design", "brand identity", "illustration", "print design", "watercolor"],
         link: "Mariana&Felipe.html",
-        image: "images/01 Homepage/BenditoMockup-WWW-Wine_Bottle-04 copiar.webp"
+        image: "images/02 Mariana e Ipy/BenditoMockup-WWW-Wine_Bottle-04 copiar.jpg"
     },
     {
         title: "Underground Magazine",
         description: "Editorial design celebrating British underground designers, with special focus on Peter Saville's iconic work.",
         tags: ["editorial design", "layout design", "typography", "magazine", "british design"],
         link: "Underground.html",
-        image: "images/05 Underground/GIF_Underground copiar.gif"
+        image: "images/05 Underground/Mockup_capa.jpg"
     },
     {
         title: "FALP",
-        description: "Visual identity for the Federation of Portuguese Language Lawyers, promoting legal cooperation among Lusophone countries.",
+        description: "Visual identity for the Federation of Portuguese Language Lawyers, promoting legal cooperation among Lusophone countries and human rights.",
         tags: ["brand identity", "legal", "federation", "visual system"],
         link: "falp.html",
         image: "images/06 FALP/Business Card_Mockup.webp"
     },
     {
         title: "MODUS",
-        description: "A fictional event for International Design Day celebrating design as a practical, human-centered discipline.",
+        description: "A fictional event for International Design Day that celebrates design as a practical, human-centered discipline, valuing function over form through clarity, humility, and purpose.",
         tags: ["event design", "concept", "branding", "design day"],
         link: "modus.html",
         image: "images/08 MODUS/Banner-gif-1_site.gif"
     },
     {
         title: "PAEZ",
-        description: "Winning collection of the PAEZ x Belas-Artes Summer 2026 contest, celebrating a mindful lifestyle connected to earth.",
+        description: "Winning collection of the PAEZ x Belas-Artes Summer 2026 contest, celebrating a simple, mindful lifestyle connected to the earth through the raw texture and vibrancy of vegetables.",
         tags: ["product design", "contest", "vegetables", "lifestyle"],
         link: "paez.html",
         image: "images/09 PAEZ/padrão tomate.svg"
     },
     {
         title: "fyted",
-        description: "A speculative interactive experience revealing how AI job interviews hide bias behind polite efficiency.",
+        description: "A speculative interactive experience revealing how AI job interviews hide bias behind polite efficiency, exposing the human cost of automated hiring systems.",
         tags: ["interaction design", "ai", "bias", "speculative", "critical design"],
         link: "fyted.html",
         image: "images/10 fyted/TDMovieOut.0.webm"
@@ -69,7 +67,7 @@ function initializeSearch() {
     const searchResults = document.querySelector('.search-results');
     const suggestionTags = document.querySelectorAll('.suggestion-tag');
 
-    if (!searchIcon || !searchOverlay) return;
+    if (!searchIcon || !searchOverlay) return; // Exit if elements don't exist
 
     // Open search overlay
     searchIcon.addEventListener('click', () => {
@@ -86,9 +84,7 @@ function initializeSearch() {
         document.body.style.overflow = '';
     }
 
-    if (searchClose) {
-        searchClose.addEventListener('click', closeSearch);
-    }
+    searchClose.addEventListener('click', closeSearch);
 
     // Close on Escape key
     document.addEventListener('keydown', (e) => {
@@ -104,14 +100,14 @@ function initializeSearch() {
         }
     });
 
-    // Search function
+    // Search function - USING RENAMED VARIABLE
     function performSearch(query) {
         if (!query.trim()) {
             searchResults.innerHTML = '';
             return;
         }
 
-        const results = portfolioProjects.filter(project => {
+        const results = portfolioSearchData.filter(project => {
             const searchText = (project.title + ' ' + project.description + ' ' + project.tags.join(' ')).toLowerCase();
             return searchText.includes(query.toLowerCase());
         });
@@ -148,14 +144,12 @@ function initializeSearch() {
 
     // Real-time search
     let searchTimeout;
-    if (searchInput) {
-        searchInput.addEventListener('input', (e) => {
-            clearTimeout(searchTimeout);
-            searchTimeout = setTimeout(() => {
-                performSearch(e.target.value);
-            }, 300);
-        });
-    }
+    searchInput.addEventListener('input', (e) => {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+            performSearch(e.target.value);
+        }, 300);
+    });
 
     // Suggestion tags
     suggestionTags.forEach(tag => {
@@ -166,16 +160,14 @@ function initializeSearch() {
     });
 
     // Handle Enter key
-    if (searchInput) {
-        searchInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                const firstResult = searchResults.querySelector('.search-result-item');
-                if (firstResult) {
-                    window.location.href = firstResult.href;
-                }
+    searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const firstResult = searchResults.querySelector('.search-result-item');
+            if (firstResult) {
+                window.location.href = firstResult.href;
             }
-        });
-    }
+        }
+    });
 }
 
 // Initialize when DOM is loaded
