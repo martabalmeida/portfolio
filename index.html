@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MARTA - Portfólio</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="search.css">
+  <link rel="stylesheet" href="custom-cursor.css">
+</head>
+<body>
+
+  
+  <header>
+    <!-- Logo à esquerda -->
+    <div class="logo">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo letras_preto.svg" alt="logo marta" class="logo-default">
+        <img src="images/logo letras_preto.svg" alt="logo marta" class="logo-hover">
+    </a>
+    </div>
+    
+    <!-- Elementos à direita agrupados -->
+    <div class="right-elements">
+      <!-- Menu desktop -->
+      <nav class="desktop-nav">
+        <a href="about-me.html">about me</a>
+        <a href="index.html">work</a>
+      </nav>
+      
+      <!-- Ícone de pesquisa -->
+      <div class="search-container">
+        <div class="search-icon">
+            <svg class="custom-search-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </div>
+    </div>
+      
+      <!-- Hamburger (só aparece em mobile) -->
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Search Overlay -->
+  <div class="search-overlay">
+    <div class="search-close">×</div>
+    
+    <div class="search-box">
+      <input 
+        type="text" 
+        class="search-input" 
+        placeholder="Search projects, skills, or anything..."
+        autocomplete="off"
+      >
+    </div>
+
+    <div class="search-suggestions">
+      <h4>Popular Searches</h4>
+      <div class="suggestion-tags">
+        <span class="suggestion-tag">Branding</span>
+        <span class="suggestion-tag">Wedding Design</span>
+        <span class="suggestion-tag">Editorial</span>
+        <span class="suggestion-tag">Art Direction</span>
+        <span class="suggestion-tag">Print Design</span>
+        <span class="suggestion-tag">Illustration</span>
+      </div>
+    </div>
+
+    <div class="search-results"></div>
+  </div>
+  
+  <!-- Menu mobile fullscreen -->
+  <div class="mobile-nav">
+    <div class="close-btn">✕</div>
+    <a href="#">about me</a>
+    <a href="index.html">work</a>
+  </div>
+
+  <div class="hero-text">
+    <p>
+      Marta is a designer who loves the simplicity of 'yes' and 'no' but knows that life is often about 'it depends'. When not creating, you can find her cooking a good risotto, exploring new places, or watching Rattatoiulle.
+    </p>
+  </div>
+  
+  <div class="grid-container">
+
+    
+    <!-- Primeira linha -->
+    <div class="grid-item item-1">
+      <img src="images/01 Homepage/livrofrente_mesa.jpg" alt="Livro azul 'Arte da Mesa'">
+      <div class="overlay">
+        <h3>A Arte da Mesa</h3>
+        <p>Rebranding a book on table etiquette, transforming tradition into a modern, visually engaging experience.</p>
+      </div>
+      <a href="A-Arte-da-Mesa.html" class="grid-link" aria-label="Ver projeto A Arte da Mesa"></a>
+    </div>
+    <div class="grid-item item-2">
+      <img src="images/01 Homepage/SpreadEducationSpreadLove.mp4" alt="Logo Spread Education, Spread Love">
+      <div class="overlay">
+        <h3>Spread Education, Spread Love</h3>
+        <p>Creating a collection that raises awareness for education and love, empowering young students' futures.</p>
+      </div>
+      <a href="SpreadEducationSpreadLove.html" class="grid-link" aria-label="Ver projeto SpreadEducationSpreadLove"></a>
+    </div>
+    
+    <!-- Item PAEZ - largura total corrigido -->
+    <div class="grid-item item-6">
+      <img src="images/09 PAEZ/padrão tomate.svg" alt="Padrão de tomate">
+      <div class="overlay">
+        <h3>PAEZ - Coming Soon</h3>
+        <p>Winning collection of the PAEZ x Belas-Artes Summer 2026 contest, celebrating a simple, mindful lifestyle connected to the earth through the raw texture and vibrancy of vegetables.</p>
+      </div>
+      <a href="https://www.belasartes.ulisboa.pt/en/os-grandes-vencedores-do-concurso-paez-nas-belas-artes-2-0-marta-almeida-e-martim-carvalho/" class="grid-link" aria-label="Ver projeto PAEZ"></a>
+    </div>
+    
+    
+    <!-- Segunda linha -->
+    <div class="grid-item item-3">
+      <img src="images/06 FALP/Business Card_Mockup.jpg" alt="Cartão de visita FALP">
+      <div class="overlay">
+        <h3>FALP</h3>
+        <p>Visual identity for the Federation of Portuguese Language Lawyers, promoting legal cooperation among Lusophone countries and human rights.</p>
+      </div>
+      <a href="falp.html" class="grid-link" aria-label="Ver projeto FALP"></a>
+    </div>
+    <div class="grid-item item-4">
+      <img src="images/01 Homepage/BenditoMockup-WWW-Wine_Bottle-04 copiar.jpg" alt="Mariana&Felipe's Wedding">
+      <div class="overlay">
+        <h3>Mariana & Felipe's Wedding</h3>
+        <p>Visual identity for a summer wedding, blending hand-drawn illustrations and soft watercolors to capture the intimacy of the day.</p>
+      </div>
+      <a href="Mariana&Felipe.html" class="grid-link" aria-label="Ver projeto Mariana & Felipe's Wedding"></a>
+    </div>
+    
+    <!-- Terceira linha -->
+    <div class="grid-item item-5">
+      <img src="images/05 Underground//GIF_Underground copiar.gif" alt="Underground">
+      <div class="overlay">
+        <h3>Underground</h3>
+        <p>A magazine honoring British underground design, reflecting on Peter Saville's transformative visual legacy and the ongoing innovation shaping the nation's creative identity.</p>
+      </div>
+      <a href="Underground.html" class="grid-link" aria-label="Ver projeto Underground"></a>
+    </div>
+    
+    <!-- Quarta linha - CORRIGIDO: removidas classes empty-item -->
+    <div class="grid-item item-7">
+      <img src="images/08 MODUS/Banner-gif-1_site.gif" alt="Banner MODUS">
+      <div class="overlay">
+        <h3>MODUS</h3>
+        <p>A fictional event for International Design Day that celebrates design as a practical, human-centered discipline, valuing function over form through clarity, humility, and purpose.</p>
+      </div>
+      <a href="modus.html" class="grid-link" aria-label="Ver projeto MODUS"></a>
+    </div>
+    <div class="grid-item item-8">
+      <img src="images/10 fyted/TDMovieOut.0 2.mov" alt="">
+      <div class="overlay">
+        <h3>fyted</h3>
+        <p>A speculative interactive experience revealing how AI job interviews hide bias behind polite efficiency, exposing the human cost of automated hiring systems.</p>
+      </div>
+      <a href="fyted.html" class="grid-link" aria-label="Ver projeto fyted"></a>
+    </div>
+  </div>
+  
+  <script src="homepage-script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="search.js"></script>
+  <script src="custom-cursor.js"></script>
+</body>
+
+
+<!-- HTML do Footer Final -->
+<footer>
+  <div class="interactive-footer">
+      <div class="footer-left">
+          <p>© 2025 marta bello pais de almeida</p>
+      </div>
+      
+      <!-- Center hover effect -->
+      <a href="mailto:martinhabpa@gmail.com" class="footer-center">
+        <div class="get-in-text-top">get in</div>
+        <div class="footer-line"></div>
+        <div class="get-in-text-bottom">touch</div>
+    </a>
+
+      <!-- Mobile static version -->
+      <a href="mailto:martinhabpa@gmail.com" class="footer-center-mobile">
+        <span class="get-in-text-top-mobile">get in</span>
+        <div class="footer-line-mobile"></div>
+        <span class="get-in-text-bottom-mobile">touch</span>
+      </a>
+      
+      <div class="footer-right">
+        <a href="https://www.instagram.com/martabpaisdealmeida/" target="_blank">instagram</a>
+        <a href="https://www.linkedin.com/in/marta-bello-pais-de-almeida/" target="_blank">linkedin</a>
+    </div>
+  </div>
+</footer>
+
+
+</html>
