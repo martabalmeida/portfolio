@@ -25,6 +25,8 @@
     font-weight: normal;
     font-style: normal;
 }
+
+/* Reset e configurações globais */
 * {
     margin: 0;
     padding: 0;
@@ -41,8 +43,8 @@ body {
 main {
     padding: 0 160px;
 }
-  
-/* Header styles - copied from Homepage.css */
+
+/* ========== HEADER ========== */
 header {
     display: flex;
     justify-content: space-between;
@@ -54,6 +56,7 @@ header {
     z-index: 100;
 }
 
+/* Logo */
 .logo-container {
     position: relative;
     display: inline-block;
@@ -81,13 +84,24 @@ header {
     opacity: 1;
 }
 
-/* Agrupar elementos à direita */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 70px;
+    display: block;
+}
+
+/* Elementos à direita */
 .right-elements {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
+/* Navegação desktop */
 .desktop-nav {
     display: flex;
     gap: 20px;
@@ -99,8 +113,14 @@ header {
     font-size: 24px;
     font-weight: 600;
     font-family: 'MarundTrial', 'PPMori', sans-serif;
-  }
+    transition: color 0.1s ease;
+}
 
+.desktop-nav a:hover {
+    color: #ED6D2E;
+}
+
+/* Ícone de pesquisa */
 .search-icon {
     font-size: 20px;
     cursor: pointer;
@@ -109,9 +129,36 @@ header {
 .search-icon img {
     height: 24px;
     width: auto;
+    transition: filter 0.1s ease;
 }
 
-/* Hamburger menu (aparece apenas em mobile) */
+.search-icon:hover img {
+    filter: brightness(0) saturate(100%) invert(53%) sepia(88%) saturate(1952%) hue-rotate(14deg) brightness(95%) contrast(89%);
+}
+
+/* SVG Search Icon */
+.custom-search-svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    transition: all 0.1s ease;
+}
+
+.custom-search-svg circle,
+.custom-search-svg path {
+    stroke: #333;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    transition: all 0.1s ease;
+}
+
+.search-icon:hover .custom-search-svg circle,
+.search-icon:hover .custom-search-svg path {
+    stroke: #ED6D2E;
+    stroke-width: 3px;
+}
+
+/* Hamburger menu */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -130,14 +177,26 @@ header {
     transition: all 0.3s ease;
 }
 
-/* Menu mobile com efeito swoosh */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Menu mobile */
 .mobile-nav {
     position: fixed;
     top: 0;
     right: -100%;
     width: 100%;
     height: 100vh;
-    background-color: #ED6D2E; /* Mudança: fundo laranja */
+    background-color: #ED6D2E;
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
@@ -145,7 +204,7 @@ header {
     align-items: center;
     z-index: 150;
     transition: right 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-  }
+}
 
 .mobile-nav.active {
     right: 0;
@@ -162,47 +221,37 @@ header {
     transform: translateX(20px);
     transition: all 0.4s ease;
     transition-delay: 0.2s;
-  }
+}
 
 .mobile-nav.active a {
     opacity: 1;
     transform: translateX(0);
 }
 
-/* Botão X para fechar o menu */
+.mobile-nav a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+}
+
 .close-btn {
     position: absolute;
     top: 30px;
     right: 30px;
     font-size: 24px;
     cursor: pointer;
-    color: #ffffff; /* Mudança: ícone branco */
+    color: #ffffff;
     opacity: 0;
     transition: all 0.3s ease;
     transition-delay: 0.3s;
-  }
-  
+}
 
 .mobile-nav.active .close-btn {
     opacity: 1;
 }
 
-/* Animação do hamburger */
-.hamburger.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
-
-/* Original nav styles for backward compatibility - HIDDEN */
+/* Nav original (escondido) */
 nav {
-    display: none; /* Hide the old nav completely */
+    display: none;
     gap: 20px;
 }
   
@@ -213,54 +262,55 @@ nav a {
     text-transform: lowercase;
     font-weight: 600;
 }
-  
-.logo {
-    display: flex;
-    align-items: center;
-}
-  
-.logo img {
-    height: 70px;
-    display: block;
-}
-  
-/* Hero Image */
+
+/* ========== HERO SECTION ========== */
 .hero-image {
     width: 100%;
     height: 700px;
     overflow: hidden;
     margin: 20px 0 60px 0;
+    position: relative;
+    background-color: #f5f5f5;
 }
-  
-.hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-  
-.hero-image video,
+
 .hero-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
-/* Título e Descrição do Projeto */
+.hero-fallback {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+/* ========== PROJECT HEADER ========== */
 .project-header {
     padding: 20px 0;
     margin-bottom: 60px;
 }
 
-/* Wrapper para o layout de duas colunas */
 .content-wrapper {
     display: flex;
     width: 100%;
     gap: 60px;
 }
 
-/* Coluna do título - à esquerda */
 .title-column {
     width: 50%;
+}
+
+.project-title {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
 }
 
 .lineup {
@@ -273,55 +323,42 @@ nav a {
     font-weight: 200;
 }
 
-/* Coluna do conteúdo - à direita */
 .content-column {
     width: 50%;
     display: flex;
     flex-direction: column;
 }
 
-/* Para o título principal */
-.project-title {
-    font-size: 28px;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    line-height: 1.2;
-}
-
-/* Para o texto de descrição */
 .description-text {
     font-size: 14px;
     line-height: 1.5;
     margin-bottom: 20px;
 }
 
-/* Para os créditos do projeto */
-.project-solution {
-    font-size: 14px;
-    line-height: 1.8;
-    color: #000;
-}
-.project-scope {
-    font-size: 14px;
-    line-height: 1.8;
-    color: #000;
-}
-
+.project-solution,
+.project-scope,
 .project-credits {
     font-size: 14px;
     line-height: 1.8;
     color: #000;
+    margin-bottom: 20px;
 }
-  
-/* Seções e Títulos */
+
+.project-solution h3,
+.project-scope h3,
+.project-credits h3 {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+/* ========== CONTENT SECTIONS ========== */
 .section-title {
-    font-weight: semi-bold;
+    font-weight: 600;
     color: #333;
     font-size: 1.17em;
     padding-bottom: 5px;
 }
 
-/* Text Section */
 .text-section {
     margin: 40px 0;
 }
@@ -332,7 +369,7 @@ nav a {
     margin-bottom: 20px;
 }
 
-/* Photo Grid Layout */
+/* ========== PHOTO GRID ========== */
 .photo-grid {
     display: flex;
     flex-direction: column;
@@ -366,8 +403,7 @@ nav a {
     height: 100%;
 }
 
-
-/* Back to top button */
+/* ========== BACK TO TOP ========== */
 .back-to-top-btn {
     position: fixed;
     bottom: 30px;
@@ -397,166 +433,7 @@ nav a {
     background-color: #f5f5f5;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    header {
-        padding: 20px 30px;
-    }
-
-    .desktop-nav {
-        display: none;
-    }
-    
-    .hamburger {
-        display: flex;
-    }
-    
-    main {
-        padding: 0 30px;
-    }
-    
-    .content-wrapper {
-        flex-direction: column;
-        gap: 30px;
-    }
-    
-    .title-column,
-    .content-column {
-        width: 100%;
-    }
-    
-    .grid-item.large {
-        height: 350px;
-    }
-    
-    .grid-row {
-        height: 300px;
-    }
-    
-    .back-to-top-btn {
-        width: 40px;
-        height: 40px;
-        bottom: 20px;
-        right: 20px;
-    }
-    
-    .back-to-top-btn svg {
-        width: 20px;
-        height: 20px;
-    }
-}
-
-@media (max-width: 900px) {
-    header {
-        padding: 20px 20px;
-    }
-    
-    main {
-        padding: 0 20px;
-    }
-    
-    .grid-row {
-        flex-direction: column;
-        height: auto;
-        gap: 15px;
-    }
-    
-    .grid-row .grid-item {
-        height: 250px;
-    }
-    
-    .grid-item.large {
-        height: 300px;
-    }
-}
-
-/* Para telas muito pequenas */
-@media (max-width: 480px) {
-    nav {
-        gap: 10px;
-    }
-    
-    nav a {
-        font-size: 12px;
-    }
-    
-    .logo img {
-        max-height: 30px;
-    }
-    
-    .hero-image {
-        height: 350px;
-    }
-    
-    .grid-item.large {
-        height: 250px;
-    }
-    
-    .grid-row .grid-item {
-        height: 200px;
-    }
-    
-    .desktop-nav a {
-        font-size: 20px;
-    }
-    
-    .logo-default,
-    .logo-hover {
-        height: 50px;
-    }
-}
-
-/* Hover effects for navigation links and search icon */
-.desktop-nav a:hover {
-    color: #ED6D2E;
-    transition: color 0.1s ease;
-}
-
-.mobile-nav a:hover {
-    color: #ffffff; /* Mudança: mantém branco */
-    opacity: 0.8; /* Mudança: transparência no hover */
-    transition: all 0.1s ease;
-  }
-
-/* Search icon hover effect - targeting the image directly */
-.search-icon:hover img {
-    filter: brightness(0) saturate(100%) invert(53%) sepia(88%) saturate(1952%) hue-rotate(14deg) brightness(95%) contrast(89%);
-    transition: filter 0.1s ease;
-}
-
-/* Ensure smooth transitions */
-.desktop-nav a,
-.mobile-nav a {
-    transition: color 0.1s ease;
-}
-
-.search-icon img {
-    transition: filter 0.1s ease;
-}
-
-/* SVG Search Icon Styling */
-.custom-search-svg {
-    width: 24px !important;
-    height: 24px !important;
-    fill: none !important;
-    transition: all 0.1s ease !important;
-}
-
-.custom-search-svg circle,
-.custom-search-svg path {
-    stroke: #333 !important;
-    stroke-width: 2px !important;
-    stroke-linecap: round;
-    transition: all 0.1s ease !important;
-}
-
-.search-icon:hover .custom-search-svg circle,
-.search-icon:hover .custom-search-svg path {
-    stroke: #ED6D2E !important;
-    stroke-width: 3px !important;
-}
-
-/* Footer Styles - Adicionar a todos os arquivos CSS */
+/* ========== FOOTER ========== */
 footer {
     position: relative;
     bottom: 0;
@@ -606,7 +483,6 @@ footer {
     opacity: 0.7;
 }
 
-/* Center hover effect - AGORA É UM LINK */
 .footer-center {
     position: absolute;
     left: 50%;
@@ -616,8 +492,8 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    text-decoration: none; /* Remove sublinhado do link */
-    color: inherit; /* Mantém a cor dos elementos filhos */
+    text-decoration: none;
+    color: inherit;
 }
 
 .footer-line {
@@ -639,7 +515,6 @@ footer {
     font-family: 'MarundTrial', 'PPMori', sans-serif;
 }
 
-/* Hover Effects */
 .footer-center:hover .get-in-text-top,
 .footer-center:hover .get-in-text-bottom {
     opacity: 1;
@@ -649,8 +524,58 @@ footer {
     width: 520px;
 }
 
-/* Footer Mobile Responsive */
+/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
+    header {
+        padding: 20px 30px;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    main {
+        padding: 0 30px;
+    }
+    
+    .hero-image {
+        height: 400px;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .title-column,
+    .content-column {
+        width: 100%;
+    }
+    
+    .grid-item.large {
+        height: 350px;
+    }
+    
+    .grid-row {
+        height: 300px;
+    }
+    
+    .back-to-top-btn {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .back-to-top-btn svg {
+        width: 20px;
+        height: 20px;
+    }
+    
     footer {
         padding: 0 30px;
         height: 150px;
@@ -676,7 +601,64 @@ footer {
     }
 }
 
+@media (max-width: 900px) {
+    header {
+        padding: 20px 20px;
+    }
+    
+    main {
+        padding: 0 20px;
+    }
+    
+    .grid-row {
+        flex-direction: column;
+        height: auto;
+        gap: 15px;
+    }
+    
+    .grid-row .grid-item {
+        height: 250px;
+    }
+    
+    .grid-item.large {
+        height: 300px;
+    }
+}
+
 @media (max-width: 480px) {
+    nav {
+        gap: 10px;
+    }
+    
+    nav a {
+        font-size: 12px;
+    }
+    
+    .logo img {
+        max-height: 30px;
+    }
+    
+    .hero-image {
+        height: 350px;
+    }
+    
+    .grid-item.large {
+        height: 250px;
+    }
+    
+    .grid-row .grid-item {
+        height: 200px;
+    }
+    
+    .desktop-nav a {
+        font-size: 20px;
+    }
+    
+    .logo-default,
+    .logo-hover {
+        height: 50px;
+    }
+    
     footer {
         padding: 0 20px;
         height: 120px;
