@@ -290,7 +290,7 @@ header.with-background {
 .item-4 {
   grid-column: span 6;
   grid-row: span 2;
-  aspect-ratio: 6 / 9;
+  aspect-ratio: 16 / 18;
 }
 
 .item-5 {
@@ -614,6 +614,26 @@ footer {
     margin-bottom: 15px;
   }
 
+  /* Autoplay videos em mobile - itens 2 e 8 */
+  .item-2 video,
+  .item-8 video {
+    autoplay: true;
+    loop: true;
+    muted: true;
+    playsinline: true;
+  }
+
+  /* Esconder controlos de vídeo em mobile */
+  .item-2 video::-webkit-media-controls,
+  .item-8 video::-webkit-media-controls {
+    display: none !important;
+  }
+
+  .item-2 video::-webkit-media-controls-enclosure,
+  .item-8 video::-webkit-media-controls-enclosure {
+    display: none !important;
+  }
+
   /* Mobile titles - mostrados em mobile */
   .mobile-title {
     display: block;
@@ -708,6 +728,15 @@ footer {
   .grid-item video {
     height: 280px;
     margin-bottom: 12px;
+  }
+
+  /* Manter autoplay em mobile pequeno também */
+  .item-2 video,
+  .item-8 video {
+    autoplay: true;
+    loop: true;
+    muted: true;
+    playsinline: true;
   }
 
   .desktop-nav a {
