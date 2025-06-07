@@ -212,7 +212,7 @@ header.with-background {
   font-style: italic;
 }
 
-/* GRID ORIGINAL MANTIDA - apenas corrigido o alinhamento */
+/* GRID DESKTOP CORRIGIDA */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -220,6 +220,7 @@ header.with-background {
   gap: 24px;
   padding: 0 90px;
   margin-bottom: 40px;
+  align-items: start;
 }
 
 .grid-item {
@@ -228,6 +229,7 @@ header.with-background {
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease;
+  width: 100%;
 }
 
 .item-content {
@@ -262,7 +264,7 @@ header.with-background {
   display: none;
 }
 
-/* Grid item layouts - MANTIDOS ORIGINAIS */
+/* Grid item layouts CORRIGIDOS - todos uniformes */
 .item-1 {
   grid-column: span 6;
   aspect-ratio: 16 / 9;
@@ -275,8 +277,7 @@ header.with-background {
 
 .item-6 {
   grid-column: span 12;
-  height: 150px;
-  aspect-ratio: unset;
+  aspect-ratio: 24 / 5;
 }
 
 .item-3 {
@@ -286,8 +287,7 @@ header.with-background {
 
 .item-4 {
   grid-column: span 6;
-  grid-row: span 2;
-  height: calc((100vw - 180px - 24px) / 12 * 6 * (9/16) * 2 + 24px);
+  aspect-ratio: 16 / 9;
 }
 
 .item-5 {
@@ -581,7 +581,7 @@ footer {
     display: flex;
     flex-direction: column;
     padding: 0 30px;
-    gap: 20px;
+    gap: 15px;
     margin-bottom: 60px;
   }
 
@@ -607,15 +607,15 @@ footer {
     object-fit: cover;
   }
 
-  /* Exceção para o item PAEZ - proporção diferente */
+  /* TODOS os itens têm o mesmo aspect-ratio em mobile */
   .item-6 .item-content {
-    aspect-ratio: 3 / 1;
+    aspect-ratio: 16 / 9;
   }
 
   /* Mobile titles - mostrados em mobile */
   .mobile-title {
     display: block;
-    padding: 12px 0 0 0;
+    padding: 15px 0 0 0;
     margin: 0;
     width: 100%;
   }
@@ -626,7 +626,7 @@ footer {
     margin: 0;
     color: #333;
     font-family: 'PPMori', sans-serif;
-    line-height: 1.3;
+    line-height: 1.4;
     word-wrap: break-word;
   }
 
@@ -690,7 +690,7 @@ footer {
 
   .grid-container {
     padding: 0 20px;
-    gap: 20px;
+    gap: 15px;
     margin-bottom: 60px;
   }
 
@@ -705,9 +705,9 @@ footer {
     object-fit: cover;
   }
 
-  /* Exceção para o item PAEZ em mobile pequeno */
+  /* TODOS os itens têm o mesmo aspect-ratio em mobile pequeno também */
   .item-6 .item-content {
-    aspect-ratio: 3 / 1 !important;
+    aspect-ratio: 16 / 9 !important;
   }
 
   .desktop-nav a {
