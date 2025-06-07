@@ -278,6 +278,10 @@ nav a {
     height: 100%;
     object-fit: cover;
     display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
 .hero-fallback {
@@ -287,7 +291,8 @@ nav a {
     position: absolute;
     top: 0;
     left: 0;
-    display: none;
+    z-index: 0;
+    display: block;
 }
 
 /* ========== PROJECT HEADER ========== */
@@ -596,12 +601,84 @@ footer *,
   background-color: #f5f5f5;
 }
 
-/* RESPONSIVE - TABLET IGUAL AO MOBILE */
+/* ========== MOBILE RESPONSIVE ========== */
 @media (max-width: 768px) {
+  /* Header adjustments */
+  header {
+    padding: 20px 30px;
+  }
+  
+  main {
+    padding: 0 30px;
+  }
+  
+  .desktop-nav {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  /* Hero section mobile */
+  .hero-image {
+    height: 400px;
+    margin: 20px 0 40px 0;
+  }
+  
+  /* Mobile video handling */
+  .hero-video {
+    /* Hide video on mobile by default */
+    display: none;
+  }
+  
+  .hero-fallback {
+    /* Show fallback image on mobile */
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Project header mobile */
+  .content-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .title-column,
+  .content-column {
+    width: 100%;
+  }
+  
+  .project-title {
+    font-size: 24px;
+  }
+  
+  .lineup {
+    font-size: 18px;
+    max-width: 100%;
+  }
+  
+  /* Photo grid mobile */
+  .grid-item.large {
+    height: 400px;
+  }
+  
+  .grid-row {
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+  }
+  
+  .grid-row .grid-item {
+    height: 300px;
+  }
+  
+  /* Footer mobile */
   footer {
     height: auto;
     min-height: 250px;
-    padding: 60px 30px 20px 30px; /* Padding lateral maior que mobile */
+    padding: 60px 30px 20px 30px;
     display: block;
   }
   
@@ -627,7 +704,6 @@ footer *,
     margin-bottom: 40px;
   }
   
-  /* Show mobile footer in hover state always */
   .footer-center-mobile .get-in-text-top-mobile,
   .footer-center-mobile .get-in-text-bottom-mobile {
     text-decoration: none !important;
@@ -674,110 +750,5 @@ footer *,
   .back-to-top-btn svg {
     width: 20px;
     height: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  footer {
-    height: auto;
-    min-height: 250px;
-    padding: 60px 20px 20px 20px; /* Reduced bottom padding */
-    display: block;
-  }
-  
-  .interactive-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0;
-    height: 100%;
-    justify-content: center; /* Changed to center */
-    padding-top: 20px;
-  }
-  
-  .footer-center {
-    display: none;
-  }
-  
-  .footer-center-mobile {
-    display: flex;
-    order: 1;
-    text-decoration: none !important;
-    margin-bottom: 40px;
-  }
-  
-  /* Show mobile footer in hover state always */
-  .footer-center-mobile .get-in-text-top-mobile,
-  .footer-center-mobile .get-in-text-bottom-mobile {
-    text-decoration: none !important;
-    border-bottom: none !important;
-    font-size: 40px;
-    font-weight: normal;
-    color: #333;
-    line-height: 1;
-    font-family: 'MarundTrial', 'PPMori', sans-serif;
-    opacity: 1 !important; /* Force always visible */
-    display: block !important;
-  }
-  
-  .footer-line-mobile {
-    width: 250px;
-    height: 3px;
-    background-color: #333;
-  }
-  
-  .footer-left {
-    order: 3;
-    margin-top: 0;
-  }
-  
-  .footer-right {
-    order: 4;
-    margin-top: 15px;
-    justify-content: center;
-    gap: 30px;
-  }
-  
-  .footer-left p,
-  .footer-right a {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 360px) {
-  footer {
-    min-height: 230px;
-    padding: 50px 15px 25px 15px;
-  }
-  
-  .interactive-footer {
-    padding-top: 15px;
-  }
-  
-  .footer-center-mobile {
-    margin-bottom: 35px;
-  }
-  
-  .footer-line-mobile {
-    width: 180px;
-    height: 2px;
-  }
-  
-  .get-in-text-top-mobile,
-  .get-in-text-bottom-mobile {
-    font-size: 32px;
-    text-decoration: none !important;
-    border-bottom: none !important;
-  }
-  
-  .footer-left p,
-  .footer-right a {
-    font-size: 11px;
-  }
-  
-  .footer-right {
-    gap: 20px;
-    margin-top: 12px;
   }
 }

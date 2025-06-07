@@ -87,7 +87,7 @@
     <main>
         <!-- Seção Hero -->
         <div class="hero-image">
-            <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+            <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="images/03-SESL/gif-hero-fallback.jpg">
                 <source src="images/03-SESL/gif-hero.mp4" type="video/mp4">
                 <source src="images/03-SESL/gif-hero.webm" type="video/webm">
                 <!-- Fallback image -->
@@ -220,43 +220,6 @@
     <script src="homepage-script.js"></script>
     <script src="search.js"></script>
     <script src="custom-cursor.js"></script>
-
-    <!-- Script adicional para o vídeo hero -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const video = document.querySelector('.hero-video');
-            const fallbackImg = document.querySelector('.hero-fallback');
-            
-            if (video) {
-                // Tentar reproduzir o vídeo
-                const playPromise = video.play();
-                
-                if (playPromise !== undefined) {
-                    playPromise.then(() => {
-                        // Vídeo está a reproduzir, esconder fallback
-                        if (fallbackImg) {
-                            fallbackImg.style.display = 'none';
-                        }
-                    }).catch(error => {
-                        // Erro ao reproduzir vídeo, mostrar fallback
-                        console.log('Video autoplay failed:', error);
-                        if (fallbackImg) {
-                            fallbackImg.style.display = 'block';
-                        }
-                        video.style.display = 'none';
-                    });
-                }
-                
-                // Listener para erros de carregamento
-                video.addEventListener('error', function() {
-                    console.log('Video loading error');
-                    if (fallbackImg) {
-                        fallbackImg.style.display = 'block';
-                    }
-                    video.style.display = 'none';
-                });
-            }
-        });
-    </script>
+    <script src="hero-video.js"></script>
 </body>
 </html>
