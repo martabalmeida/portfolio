@@ -290,7 +290,7 @@ header.with-background {
 .item-4 {
   grid-column: span 6;
   grid-row: span 2;
-  height: calc((100vw - 180px - 24px) / 12 * 6 * (9/16) * 2 + 24px);
+  aspect-ratio: 6 / 9;
 }
 
 .item-5 {
