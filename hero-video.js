@@ -25,14 +25,19 @@ document.addEventListener('DOMContentLoaded', function() {
         // If mobile device or limited bandwidth, show fallback image
         if (isMobileDevice() || hasLimitedBandwidth()) {
             video.style.display = 'none';
+            video.style.visibility = 'hidden';
             fallbackImg.style.display = 'block';
+            fallbackImg.style.visibility = 'visible';
             fallbackImg.style.zIndex = '2';
+            fallbackImg.style.position = 'relative';
             return;
         }
         
         // For desktop, try to load and play video
         video.style.display = 'block';
+        video.style.visibility = 'visible';
         fallbackImg.style.display = 'block'; // Keep as background
+        fallbackImg.style.position = 'absolute';
         
         // Set up video event listeners
         video.addEventListener('loadeddata', function() {
@@ -70,8 +75,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function showFallback() {
         if (video && fallbackImg) {
             video.style.display = 'none';
+            video.style.visibility = 'hidden';
             fallbackImg.style.display = 'block';
+            fallbackImg.style.visibility = 'visible';
             fallbackImg.style.zIndex = '2';
+            fallbackImg.style.position = 'relative';
         }
     }
     

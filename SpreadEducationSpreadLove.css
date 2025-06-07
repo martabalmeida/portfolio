@@ -629,14 +629,17 @@ footer *,
   /* Mobile video handling */
   .hero-video {
     /* Hide video on mobile by default */
-    display: none;
+    display: none !important;
   }
   
   .hero-fallback {
     /* Show fallback image on mobile */
-    display: block;
+    display: block !important;
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   
   /* Project header mobile */
@@ -750,5 +753,159 @@ footer *,
   .back-to-top-btn svg {
     width: 20px;
     height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Header adjustments for small mobile */
+  header {
+    padding: 15px 20px;
+  }
+  
+  main {
+    padding: 0 20px;
+  }
+  
+  .logo-default,
+  .logo-hover {
+    height: 50px;
+  }
+  
+  /* Hero section small mobile */
+  .hero-image {
+    height: 300px;
+    margin: 15px 0 30px 0;
+  }
+  
+  /* Project header small mobile */
+  .project-title {
+    font-size: 22px;
+  }
+  
+  .lineup {
+    font-size: 16px;
+    margin-top: 15px;
+  }
+  
+  .description-text,
+  .project-solution,
+  .project-scope,
+  .project-credits {
+    font-size: 13px;
+  }
+  
+  /* Photo grid small mobile */
+  .grid-item.large {
+    height: 300px;
+  }
+  
+  .grid-row .grid-item {
+    height: 250px;
+  }
+  
+  .photo-grid {
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+  
+  /* Footer small mobile */
+  footer {
+    min-height: 230px;
+    padding: 50px 15px 25px 15px;
+  }
+  
+  .interactive-footer {
+    padding-top: 15px;
+  }
+  
+  .footer-center-mobile {
+    margin-bottom: 35px;
+  }
+  
+  .footer-line-mobile {
+    width: 180px;
+    height: 2px;
+  }
+  
+  .get-in-text-top-mobile,
+  .get-in-text-bottom-mobile {
+    font-size: 32px;
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+  
+  .footer-left p,
+  .footer-right a {
+    font-size: 11px;
+  }
+  
+  .footer-right {
+    gap: 20px;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  /* Extra small mobile adjustments */
+  header {
+    padding: 10px 15px;
+  }
+  
+  main {
+    padding: 0 15px;
+  }
+  
+  .logo-default,
+  .logo-hover {
+    height: 45px;
+  }
+  
+  /* Hero section extra small */
+  .hero-image {
+    height: 250px;
+    margin: 10px 0 25px 0;
+  }
+  
+  /* Project header extra small */
+  .project-title {
+    font-size: 20px;
+  }
+  
+  .lineup {
+    font-size: 15px;
+  }
+  
+  /* Photo grid extra small */
+  .grid-item.large {
+    height: 250px;
+  }
+  
+  .grid-row .grid-item {
+    height: 200px;
+  }
+  
+  .photo-grid {
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  
+  /* Footer extra small */
+  footer {
+    min-height: 200px;
+    padding: 40px 10px 20px 10px;
+  }
+  
+  .footer-line-mobile {
+    width: 150px;
+  }
+  
+  .get-in-text-top-mobile,
+  .get-in-text-bottom-mobile {
+    font-size: 28px;
+  }
+  
+  .footer-left p,
+  .footer-right a {
+    font-size: 10px;
   }
 }
