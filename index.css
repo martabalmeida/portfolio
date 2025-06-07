@@ -583,7 +583,7 @@ footer {
     display: flex;
     flex-direction: column;
     padding: 0 30px;
-    gap: 40px;
+    gap: 20px;
     margin-bottom: 60px;
   }
 
@@ -622,16 +622,21 @@ footer {
   /* Mobile titles - mostrados em mobile */
   .mobile-title {
     display: block;
-    padding: 15px 0 0 0;
+    padding: 12px 0 0 0;
     margin: 0;
+    width: 100%;
+    overflow: visible;
   }
 
   .mobile-title h3 {
-    font-size: 16px;
+    font-size: 1.13rem;
     font-weight: 600;
     margin: 0;
     color: #333;
     font-family: 'PPMori', sans-serif;
+    line-height: 1.2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   /* Overlay escondido em mobile */
@@ -694,7 +699,7 @@ footer {
 
   .grid-container {
     padding: 0 20px;
-    gap: 40px;
+    gap: 20px;
     margin-bottom: 60px;
   }
 
