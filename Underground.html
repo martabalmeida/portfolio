@@ -117,7 +117,16 @@
         <div class="magazine-spreads">
             <!-- Large spread image -->
             <div class="spread-large">
-            <video autoplay muted loop playsinline webkit-playsinline>
+            <video 
+                autoplay 
+                muted 
+                loop 
+                playsinline 
+                webkit-playsinline 
+                disablepictureinpicture
+                preload="auto"
+                controls="false"
+                id="underground-video">
                 <source src="images/05-underground/gif.webm" type="video/webm">
                 <img src="images/05-underground/UNDER002_FullSpread.webp" alt="Pessoa servindo vinho em uma mesa de jantar" loading="lazy" />
             </video>
@@ -184,6 +193,58 @@
         </div>
     </div>
 </footer>
+
+<script>
+// Garantir que o vídeo reproduz automaticamente em mobile
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('underground-video');
+    
+    if (video) {
+        // Forçar reprodução automática
+        video.muted = true;
+        video.autoplay = true;
+        video.loop = true;
+        video.playsInline = true;
+        
+        // Tentar reproduzir o vídeo
+        const playPromise = video.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                // Vídeo começou a reproduzir com sucesso
+            }).catch(error => {
+                // Autoplay foi impedido, tentar novamente com interação do usuário
+                console.log('Autoplay impedido:', error);
+                
+                // Remover controles se existirem
+                video.removeAttribute('controls');
+                
+                // Tentar reproduzir novamente com um delay
+                setTimeout(() => {
+                    video.play().catch(e => console.log('Tentativa de reprodução falhou:', e));
+                }, 100);
+            });
+        }
+        
+        // Garantir que não há controles
+        video.removeAttribute('controls');
+        video.controls = false;
+        
+        // Evento para garantir loop contínuo
+        video.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        });
+        
+        // Garantir que o vídeo está sempre mutado
+        video.addEventListener('volumechange', function() {
+            if (!this.muted) {
+                this.muted = true;
+            }
+        });
+    }
+});
+</script>
     <script src="homepage-script.js"></script>
     <script src="search.js"></script>
     <script src="custom-cursor.js"></script>
