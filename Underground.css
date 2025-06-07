@@ -293,6 +293,36 @@ main {
     object-position: center;
     pointer-events: none;
     display: block;
+    background: transparent;
+}
+
+/* Esconder completamente os controles do vídeo */
+.spread-large video::-webkit-media-controls {
+    display: none !important;
+    -webkit-appearance: none !important;
+}
+
+.spread-large video::-webkit-media-controls-panel {
+    display: none !important;
+    -webkit-appearance: none !important;
+}
+
+.spread-large video::-webkit-media-controls-play-button {
+    display: none !important;
+    -webkit-appearance: none !important;
+}
+
+.spread-large video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none !important;
+}
+
+.spread-large video::-moz-media-controls {
+    display: none !important;
+}
+
+.spread-large video::-ms-media-controls {
+    display: none !important;
 }
 
 .spreads-grid {
@@ -559,6 +589,38 @@ footer {
         object-fit: contain;
         object-position: center;
         max-height: 400px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    
+    /* Esconder controles em mobile - específico */
+    .spread-large video::-webkit-media-controls {
+        display: none !important;
+        -webkit-appearance: none !important;
+    }
+    
+    .spread-large video::-webkit-media-controls-panel {
+        display: none !important;
+        -webkit-appearance: none !important;
+    }
+    
+    .spread-large video::-webkit-media-controls-play-button {
+        display: none !important;
+        -webkit-appearance: none !important;
+    }
+    
+    .spread-large video::-webkit-media-controls-start-playback-button {
+        display: none !important;
+        -webkit-appearance: none !important;
+    }
+    
+    .spread-large video::-webkit-media-controls-enclosure {
+        display: none !important;
+    }
+    
+    .spread-large video::-webkit-media-controls-overlay-enclosure {
+        display: none !important;
     }
     
     .spreads-grid {
@@ -671,6 +733,38 @@ footer {
         height: auto;
         object-fit: contain;
         max-height: 300px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    
+    /* Esconder controles em mobile pequeno - específico */
+    .spread-large video::-webkit-media-controls {
+        display: none !important;
+        -webkit-appearance: none !important;
+    }
+    
+    .spread-large video::-webkit-media-controls-panel {
+        display: none !important;
+        -webkit-appearance: none !important;
+    }
+    
+    .spread-large video::-webkit-media-controls-play-button {
+        display: none !important;
+        -webkit-appearance: none !important;
+    }
+    
+    .spread-large video::-webkit-media-controls-start-playback-button {
+        display: none !important;
+        -webkit-appearance: none !important;
+    }
+    
+    .spread-large video::-webkit-media-controls-enclosure {
+        display: none !important;
+    }
+    
+    .spread-large video::-webkit-media-controls-overlay-enclosure {
+        display: none !important;
     }
     
     .spread-item {
