@@ -325,9 +325,10 @@ nav a {
   transform-origin: center center;
 }
 
-/* Digital concepts section - Limpo sem debug */
+/* Digital concepts section - Largura completa */
 .digital-section {
-  width: 100%;
+  width: calc(100% + 320px); /* Compensa o padding do main (160px x 2) */
+  margin-left: -160px; /* Vai até às margens */
   padding: 60px 0;
   margin-bottom: 120px;
   display: flex;
@@ -338,33 +339,20 @@ nav a {
 
 .digital-concept-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: none; /* Remove limitação de largura */
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  padding: 0 160px; /* Adiciona padding interno */
 }
 
 .digital-concept-container video {
   width: 100%;
   height: auto;
-  max-width: 100%;
   display: block;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Fallback para quando o vídeo não carrega */
-.digital-concept-container::after {
-  content: "Vídeo: Mockup-pc.mp4";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #666;
-  font-size: 16px;
-  pointer-events: none;
-  z-index: 1;
 }
 
 /* Mobile mockups section - SEM FUNDO */
@@ -753,8 +741,14 @@ footer *,
   }
   
   .digital-section {
+    width: calc(100% + 60px); /* Compensa padding mobile (30px x 2) */
+    margin-left: -30px;
     padding: 40px 0;
     margin-bottom: 80px;
+  }
+  
+  .digital-concept-container {
+    padding: 0 30px; /* Padding interno mobile */
   }
   
   .mobile-section {
@@ -872,8 +866,14 @@ footer *,
   }
   
   .digital-section {
+    width: calc(100% + 40px); /* Compensa padding mobile (20px x 2) */
+    margin-left: -20px;
     padding: 30px 0;
     margin-bottom: 60px;
+  }
+  
+  .digital-concept-container {
+    padding: 0 20px; /* Padding interno mobile */
   }
   
   .mobile-section {
