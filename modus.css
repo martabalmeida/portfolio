@@ -973,3 +973,22 @@ footer *,
         margin-top: 12px;
     }
 }
+
+
+/* Adicione esta regra no final do seu modus.css para sobrescrever o global-typography.css apenas para h3 */
+
+/* Override específico para h3 - ignora as regras do global-typography.css */
+h3 {
+    font-size: inherit !important;
+    font-weight: inherit !important;
+}
+
+/* Ou se preferir ser mais específico, pode usar: */
+.project-solution h3,
+.project-scope h3,
+.project-credits h3 {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
