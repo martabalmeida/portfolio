@@ -614,15 +614,6 @@ footer {
     margin-bottom: 15px;
   }
 
-  /* Autoplay videos em mobile - itens 2 e 8 */
-  .item-2 video,
-  .item-8 video {
-    autoplay: true;
-    loop: true;
-    muted: true;
-    playsinline: true;
-  }
-
   /* Esconder controlos de vídeo em mobile */
   .item-2 video::-webkit-media-controls,
   .item-8 video::-webkit-media-controls {
@@ -728,15 +719,6 @@ footer {
   .grid-item video {
     height: 280px;
     margin-bottom: 12px;
-  }
-
-  /* Manter autoplay em mobile pequeno também */
-  .item-2 video,
-  .item-8 video {
-    autoplay: true;
-    loop: true;
-    muted: true;
-    playsinline: true;
   }
 
   .desktop-nav a {
