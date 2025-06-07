@@ -344,19 +344,21 @@ nav a {
     height: 200px;
     gap: 12px;
     align-items: center;
+    width: 100%;
 }
 
 .gallery-cell.mf-logo {
-    flex: 0.2;
+    flex: 1;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    max-width: 200px;
 }
 
 .gallery-cell.mariana-banner {
-    flex: 0.5;
+    flex: 3;
     height: 100%;
     display: flex;
     align-items: center;
@@ -365,12 +367,13 @@ nav a {
 }
 
 .gallery-cell.color-code-container {
-    flex: 0.3;
+    flex: 1.5;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    max-width: 300px;
 }
 
 .gallery-cell img {
