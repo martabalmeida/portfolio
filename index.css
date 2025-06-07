@@ -212,15 +212,14 @@ header.with-background {
   font-style: italic;
 }
 
-/* GRID DESKTOP - solução estável para todos os itens */
+/* GRID DESKTOP - Layout original baseado no CSS fornecido */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(4, minmax(200px, auto));
+  grid-auto-rows: auto;
   gap: 24px;
   padding: 0 90px;
   margin-bottom: 40px;
-  align-items: stretch;
 }
 
 .grid-item {
@@ -229,7 +228,6 @@ header.with-background {
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease;
-  min-height: 0;
 }
 
 .item-content {
@@ -264,46 +262,53 @@ header.with-background {
   display: none;
 }
 
-/* Grid item layouts - posições fixas para estabilidade */
+/* Grid item layouts - seguindo a estrutura do CSS fornecido */
 .item-1 {
-  grid-column: 1 / 7;
-  grid-row: 1 / 2;
+  grid-column: span 6;
+  grid-row: span 1;
+  aspect-ratio: 16 / 9;
 }
 
 .item-2 {
-  grid-column: 7 / 13;
-  grid-row: 1 / 2;
+  grid-column: span 6;
+  grid-row: span 1;
+  aspect-ratio: 16 / 9;
 }
 
 .item-6 {
-  grid-column: 1 / 13;
-  grid-row: 2 / 3;
+  grid-column: span 12;
   height: 150px;
+  aspect-ratio: unset;
 }
 
 .item-3 {
-  grid-column: 1 / 7;
-  grid-row: 3 / 4;
+  grid-column: span 6;
+  grid-row: span 1;
+  aspect-ratio: 16 / 9;
 }
 
 .item-4 {
-  grid-column: 7 / 13;
-  grid-row: 3 / 5;
+  grid-column: span 6;
+  grid-row: span 2;
+  aspect-ratio: 6 / 9;
 }
 
 .item-5 {
-  grid-column: 1 / 7;
-  grid-row: 4 / 5;
+  grid-column: span 6;
+  grid-row: span 1;
+  aspect-ratio: 16 / 9;
 }
 
 .item-7 {
-  grid-column: 1 / 7;
-  grid-row: 5 / 6;
+  grid-column: span 6;
+  grid-row: span 1;
+  aspect-ratio: 16 / 9;
 }
 
 .item-8 {
-  grid-column: 7 / 13;
-  grid-row: 5 / 6;
+  grid-column: span 6;
+  grid-row: span 1;
+  aspect-ratio: 16 / 9;
 }
 
 /* Overlay colors for each item - cores corretas */
@@ -607,17 +612,6 @@ footer {
     border-radius: 24px;
     display: block;
     margin-bottom: 15px;
-  }
-
-  /* Esconder controlos de vídeo em mobile */
-  .item-2 video::-webkit-media-controls,
-  .item-8 video::-webkit-media-controls {
-    display: none !important;
-  }
-
-  .item-2 video::-webkit-media-controls-enclosure,
-  .item-8 video::-webkit-media-controls-enclosure {
-    display: none !important;
   }
 
   /* Mobile titles - mostrados em mobile */
