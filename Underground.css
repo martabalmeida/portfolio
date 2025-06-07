@@ -782,15 +782,12 @@ footer {
         overflow: hidden; /* Garante que nada saia dos limites */
     }
     
-    .spread-large video {
+  .spread-large video {
         width: 100%;
         height: 100%;
         object-fit: cover; /* Mantém a proporção sem distorcer */
         object-position: center; /* Centraliza o vídeo */
-        /* Propriedades importantes para mobile */
-        playsinline: true; /* Garante reprodução inline no iOS */
-        webkit-playsinline: true; /* Para compatibilidade com Safari */
-    }
+  }
 }
 
 @media (max-width: 480px) {
