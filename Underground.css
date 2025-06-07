@@ -290,6 +290,8 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* Adicionar estas propriedades para garantir o autoplay e loop */
+    pointer-events: none; /* Remove a possibilidade de controles nativos */
 }
 
 .spreads-grid {
@@ -769,5 +771,53 @@ footer {
     .footer-right {
         gap: 20px;
         margin-top: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .spread-large {
+        height: 400px;
+        /* Garantir que o container tenha altura fixa */
+        position: relative;
+        overflow: hidden; /* Garante que nada saia dos limites */
+    }
+    
+    .spread-large video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Mantém a proporção sem distorcer */
+        object-position: center; /* Centraliza o vídeo */
+        /* Propriedades importantes para mobile */
+        playsinline: true; /* Garante reprodução inline no iOS */
+        webkit-playsinline: true; /* Para compatibilidade com Safari */
+    }
+}
+
+@media (max-width: 480px) {
+    .spread-large {
+        height: 300px; /* Reduz altura para telas menores */
+        margin-bottom: 30px;
+    }
+    
+    .spread-large video {
+        /* Garante que o vídeo cubra toda a área disponível */
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* Se você quiser uma abordagem alternativa para garantir que funcione em todos os dispositivos */
+@media (max-width: 768px) {
+    .spread-large video {
+        /* Alternativa usando transform para centralizar melhor */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
     }
 }
