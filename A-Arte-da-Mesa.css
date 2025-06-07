@@ -325,7 +325,7 @@ nav a {
   transform-origin: center center;
 }
 
-/* Digital concepts section - Corrigido para mostrar o vídeo */
+/* Digital concepts section - Limpo sem debug */
 .digital-section {
   width: 100%;
   padding: 60px 0;
@@ -334,8 +334,6 @@ nav a {
   flex-direction: column;
   align-items: center;
   background-color: transparent;
-  border: 2px dashed #ccc; /* Debug: para ver se a seção existe */
-  min-height: 400px; /* Debug: altura mínima */
 }
 
 .digital-concept-container {
@@ -345,8 +343,6 @@ nav a {
   justify-content: center;
   align-items: center;
   position: relative;
-  border: 2px solid red; /* Debug: para ver o container */
-  min-height: 300px; /* Debug: altura mínima */
 }
 
 .digital-concept-container video {
@@ -356,7 +352,19 @@ nav a {
   display: block;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  background-color: #f0f0f0; /* Debug: fundo para ver se o vídeo carrega */
+}
+
+/* Fallback para quando o vídeo não carrega */
+.digital-concept-container::after {
+  content: "Vídeo: Mockup-pc.mp4";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #666;
+  font-size: 16px;
+  pointer-events: none;
+  z-index: 1;
 }
 
 /* Mobile mockups section - SEM FUNDO */
