@@ -325,7 +325,7 @@ nav a {
   transform-origin: center center;
 }
 
-/* Digital concepts section - SEM FUNDO */
+/* Digital concepts section - Corrigido para mostrar o vídeo */
 .digital-section {
   width: 100%;
   padding: 60px 0;
@@ -333,6 +333,9 @@ nav a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: transparent;
+  border: 2px dashed #ccc; /* Debug: para ver se a seção existe */
+  min-height: 400px; /* Debug: altura mínima */
 }
 
 .digital-concept-container {
@@ -341,6 +344,9 @@ nav a {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  border: 2px solid red; /* Debug: para ver o container */
+  min-height: 300px; /* Debug: altura mínima */
 }
 
 .digital-concept-container video {
@@ -348,6 +354,9 @@ nav a {
   height: auto;
   max-width: 100%;
   display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: #f0f0f0; /* Debug: fundo para ver se o vídeo carrega */
 }
 
 /* Mobile mockups section - SEM FUNDO */
@@ -371,13 +380,11 @@ nav a {
 }
 
 .mobile-mockups-container img {
-  width: 112%;
+  width: 100%;
   height: auto;
   display: block;
   object-fit: contain;
-  min-height: 600px;
-  transform: scale(1.12);
-  transform-origin: center center;
+  max-width: 100%;
 }
 
 /* Project navigation */
@@ -748,8 +755,9 @@ footer *,
   }
   
   .mobile-mockups-container img {
-    transform: scale(1.08);
-    width: 108%;
+    width: 100%;
+    max-width: 100%;
+    transform: none;
   }
   
   footer {
@@ -866,9 +874,10 @@ footer *,
   }
   
   .mobile-mockups-container img {
-    transform: scale(1.05);
-    width: 105%;
-    min-height: 450px;
+    width: 100%;
+    max-width: 100%;
+    transform: none;
+    min-height: auto;
   }
   
   footer {
