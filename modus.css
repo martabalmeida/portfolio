@@ -630,9 +630,9 @@ footer *,
     
     /* HERO BANNER - CORRIGIDO PARA MOBILE */
     .hero-banner {
-        height: 45vh; /* Reduzido para 45vh */
-        min-height: 280px; /* Reduzido para 280px */
-        max-height: 400px; /* Reduzido para 400px */
+        height: 35vh; /* Reduzido para 35vh */
+        min-height: 220px; /* Reduzido para 220px */
+        max-height: 300px; /* Reduzido para 300px */
         margin: 20px 0 40px 0;
     }
     
@@ -646,29 +646,29 @@ footer *,
     .text-operandi,
     .text-fazendi,
     .text-cogitandi {
-        font-size: 20px; /* Reduzido de 24px */
+        font-size: 18px; /* Ligeiramente maior para manter legibilidade */
     }
     
     .text-operandi {
-        top: 50px; /* Ajustado */
-        right: 80px;
+        top: 40px; /* Ajustado */
+        right: 70px;
     }
     
     .text-fazendi {
-        top: 140px; /* Ajustado */
-        left: 80px;
+        top: 110px; /* Ajustado */
+        left: 70px;
     }
     
     .text-cogitandi {
-        bottom: 60px; /* Ajustado */
+        bottom: 50px; /* Ajustado */
         left: 50%;
         transform: translateX(-50%);
     }
     
     .date {
-        bottom: 25px; /* Ajustado */
-        left: 50px;
-        font-size: 16px;
+        bottom: 20px; /* Ajustado */
+        left: 45px;
+        font-size: 14px; /* Aumentado para manter legibilidade */
     }
     
     .content-wrapper {
@@ -816,9 +816,9 @@ footer *,
     
     /* HERO BANNER - ALTURA MELHORADA PARA TELAS PEQUENAS */
     .hero-banner {
-        height: 40vh; /* Reduzido para 40vh */
-        min-height: 250px; /* Reduzido para 250px */
-        max-height: 320px; /* Reduzido para 320px */
+        height: 30vh; /* Reduzido para 30vh */
+        min-height: 180px; /* Reduzido para 180px */
+        max-height: 250px; /* Reduzido para 250px */
     }
     
     .hero-banner img {
@@ -831,29 +831,29 @@ footer *,
     .text-operandi,
     .text-fazendi,
     .text-cogitandi {
-        font-size: 16px; /* Reduzido ainda mais */
+        font-size: 14px; /* Reduzido ainda mais para caber */
     }
     
     .text-operandi {
-        top: 30px; /* Ajustado */
-        right: 40px;
+        top: 25px; /* Ajustado */
+        right: 35px;
     }
     
     .text-fazendi {
-        top: 100px; /* Ajustado */
-        left: 40px;
+        top: 80px; /* Ajustado */
+        left: 35px;
     }
     
     .text-cogitandi {
-        bottom: 45px; /* Ajustado */
+        bottom: 35px; /* Ajustado */
         left: 50%;
         transform: translateX(-50%);
     }
     
     .date {
-        bottom: 15px; /* Ajustado */
-        left: 25px;
-        font-size: 12px; /* Reduzido */
+        bottom: 10px; /* Ajustado */
+        left: 20px;
+        font-size: 11px; /* Reduzido */
     }
     
     .desktop-nav a {
