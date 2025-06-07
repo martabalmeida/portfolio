@@ -245,6 +245,7 @@ header.with-background {
   object-fit: cover;
   transition: opacity 0.3s ease;
   display: block;
+  background-color: #f8f8f8;
 }
 
 .grid-link {
@@ -290,7 +291,7 @@ header.with-background {
 .item-4 {
   grid-column: span 6;
   grid-row: span 2;
-  aspect-ratio: 6 / 9;
+  aspect-ratio: 0.842;
 }
 
 .item-5 {
@@ -578,17 +579,18 @@ footer {
   .desktop-nav {
     display: none;
   }
-  
+
   .hamburger {
     display: flex;
   }
-  
+
   .grid-container {
     grid-template-columns: repeat(6, 1fr);
     padding: 0 30px;
   }
 
   .grid-item {
+    margin-bottom: 0 !important;
     display: block !important;
     height: auto !important;
     aspect-ratio: unset !important;
@@ -611,7 +613,6 @@ footer {
     object-fit: cover;
     border-radius: 24px;
     display: block;
-    margin-bottom: 15px;
   }
 
   /* Mobile titles - mostrados em mobile */
@@ -620,6 +621,7 @@ footer {
     padding: 0;
     margin: 0;
     width: 100%;
+    margin-top: 6px !important;
   }
 
   .mobile-title h3 {
@@ -659,7 +661,7 @@ footer {
   .hero-text {
     padding: 80px 30px 50px 30px;
   }
-    
+
   .hero-text p {
     font-size: 24px;
   }
@@ -670,7 +672,7 @@ footer {
     bottom: 20px;
     right: 20px;
   }
-  
+
   .back-to-top-btn svg {
     width: 20px;
     height: 20px;
@@ -681,11 +683,11 @@ footer {
     height: 150px;
     padding-bottom: 20px;
   }
-  
+
   .footer-center {
     display: none !important;
   }
-  
+
   .footer-center-mobile {
     display: flex !important;
   }
@@ -695,7 +697,7 @@ footer {
   .hero-text {
     padding: 60px 20px 40px 20px;
   }
-  
+
   .hero-text p {
     font-size: 20px;
   }
@@ -704,16 +706,19 @@ footer {
     padding: 0 20px;
   }
 
+  .grid-item {
+    margin-bottom: 24px !important;
+  }
+
   .grid-item img,
   .grid-item video {
-    height: 280px;
-    margin-bottom: 12px;
+    height: 100%;
   }
 
   .desktop-nav a {
     font-size: 20px;
   }
-  
+
   .logo-default,
   .logo-hover {
     height: 50px;
@@ -725,7 +730,7 @@ footer {
     padding: 60px 20px 20px 20px;
     display: block;
   }
-  
+
   .interactive-footer {
     display: flex;
     flex-direction: column;
@@ -736,17 +741,17 @@ footer {
     justify-content: center;
     padding-top: 20px;
   }
-  
+
   .footer-center {
     display: none;
   }
-  
+
   .footer-center-mobile {
     display: flex;
     order: 1;
     margin-bottom: 40px;
   }
-  
+
   .footer-center-mobile .get-in-text-top-mobile,
   .footer-center-mobile .get-in-text-bottom-mobile {
     font-size: 40px;
@@ -755,25 +760,25 @@ footer {
     line-height: 1;
     font-family: 'MarundTrial', 'PPMori', sans-serif;
   }
-  
+
   .footer-line-mobile {
     width: 250px;
     height: 3px;
     background-color: #333;
   }
-  
+
   .footer-left {
     order: 3;
     margin-top: 0;
   }
-  
+
   .footer-right {
     order: 4;
     margin-top: 15px;
     justify-content: center;
     gap: 30px;
   }
-  
+
   .footer-left p,
   .footer-right a {
     font-size: 12px;
