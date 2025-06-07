@@ -630,9 +630,9 @@ footer *,
     
     /* HERO BANNER - CORRIGIDO PARA MOBILE */
     .hero-banner {
-        height: 60vh; /* Aumentado de 50vh */
-        min-height: 400px; /* Aumentado de 300px */
-        max-height: 600px; /* Aumentado de 500px */
+        height: 45vh; /* Reduzido para 45vh */
+        min-height: 280px; /* Reduzido para 280px */
+        max-height: 400px; /* Reduzido para 400px */
         margin: 20px 0 40px 0;
     }
     
@@ -646,29 +646,29 @@ footer *,
     .text-operandi,
     .text-fazendi,
     .text-cogitandi {
-        font-size: 24px;
+        font-size: 20px; /* Reduzido de 24px */
     }
     
     .text-operandi {
-        top: 60px;
-        right: 90px;
+        top: 50px; /* Ajustado */
+        right: 80px;
     }
     
     .text-fazendi {
-        top: 220px;
-        left: 90px;
+        top: 140px; /* Ajustado */
+        left: 80px;
     }
     
     .text-cogitandi {
-        bottom: 90px;
+        bottom: 60px; /* Ajustado */
         left: 50%;
         transform: translateX(-50%);
     }
     
     .date {
-        bottom: 40px;
-        left: 60px;
-        font-size: 18px;
+        bottom: 25px; /* Ajustado */
+        left: 50px;
+        font-size: 16px;
     }
     
     .content-wrapper {
@@ -816,9 +816,9 @@ footer *,
     
     /* HERO BANNER - ALTURA MELHORADA PARA TELAS PEQUENAS */
     .hero-banner {
-        height: 55vh; /* Aumentado de 40vh */
-        min-height: 350px; /* Aumentado de 250px */
-        max-height: 500px; /* Aumentado de 400px */
+        height: 40vh; /* Reduzido para 40vh */
+        min-height: 250px; /* Reduzido para 250px */
+        max-height: 320px; /* Reduzido para 320px */
     }
     
     .hero-banner img {
@@ -831,29 +831,29 @@ footer *,
     .text-operandi,
     .text-fazendi,
     .text-cogitandi {
-        font-size: 18px;
+        font-size: 16px; /* Reduzido ainda mais */
     }
     
     .text-operandi {
-        top: 40px;
-        right: 50px;
+        top: 30px; /* Ajustado */
+        right: 40px;
     }
     
     .text-fazendi {
-        top: 150px;
-        left: 50px;
+        top: 100px; /* Ajustado */
+        left: 40px;
     }
     
     .text-cogitandi {
-        bottom: 60px;
+        bottom: 45px; /* Ajustado */
         left: 50%;
         transform: translateX(-50%);
     }
     
     .date {
-        bottom: 20px;
-        left: 30px;
-        font-size: 14px;
+        bottom: 15px; /* Ajustado */
+        left: 25px;
+        font-size: 12px; /* Reduzido */
     }
     
     .desktop-nav a {
