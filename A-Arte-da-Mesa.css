@@ -316,7 +316,7 @@ nav a {
 }
 
 .spread-item img {
-  width: 115%;
+  width: 100%;
   height: auto;
   display: block;
   object-fit: contain;
