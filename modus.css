@@ -434,14 +434,14 @@ main {
 
 .two-images-item {
     width: 50%;
-    height: 400px;
+    height: 500px;
     overflow: hidden;
 }
 
 .two-images-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 /* Grid de 4 colunas para a segunda imagem */
@@ -450,7 +450,7 @@ main {
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     width: 50%;
-    height: 400px;
+    height: 500px;
 }
 
 .grid-item {
