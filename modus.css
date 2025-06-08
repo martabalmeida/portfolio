@@ -310,40 +310,29 @@ main {
 /* Container para agrupar placeholder-logo e placeholder-section lado a lado */
 .placeholder-container {
     display: flex;
-    gap: 40px; /* Espaço entre os elementos */
+    gap: 40px;
     margin-bottom: 60px;
     width: 100%;
-    align-items: flex-start; /* Alinha no topo */
+    align-items: center;
 }
 
-/* Modificações para placeholder-logo */
-.placeholder-logo {
-    margin-bottom: 0; /* Remove margin-bottom já que agora está no container */
-    width: 50%; /* Ocupa metade da largura */
+/* Dentro do container, cada elemento ocupa 50% */
+.placeholder-container .placeholder-logo,
+.placeholder-container .placeholder-section {
+    width: 50%;
+    margin-bottom: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.placeholder-logo img {
+.placeholder-container .placeholder-logo img,
+.placeholder-container .placeholder-section img {
     width: 100%;
     height: auto;
     object-fit: contain;
-    max-height: 600px;
-}
-
-/* Modificações para placeholder-section */
-.placeholder-section {
-    margin-bottom: 0; /* Remove margin-bottom já que agora está no container */
-    width: 50%; /* Ocupa metade da largura */
-    display: flex;
-    justify-content: center;
-}
-
-.placeholder-section img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    max-height: 600px; /* Mesma altura máxima do placeholder-logo */
+    max-height: 400px;
+    max-width: 100%;
 }
 
 /* Responsive - em mobile voltam a ficar um em cima do outro */
@@ -353,20 +342,25 @@ main {
         gap: 30px;
     }
     
-    .placeholder-logo,
-    .placeholder-section {
+    .placeholder-container .placeholder-logo,
+    .placeholder-container .placeholder-section {
         width: 100%;
     }
     
-    .placeholder-section img,
-    .placeholder-logo img {
-        max-height: 350px;
+    .placeholder-container .placeholder-section img,
+    .placeholder-container .placeholder-logo img {
+        max-height: 300px;
     }
 }
 
 @media (max-width: 480px) {
     .placeholder-container {
         gap: 20px;
+    }
+    
+    .placeholder-container .placeholder-section img,
+    .placeholder-container .placeholder-logo img {
+        max-height: 250px;
     }
 }
 
