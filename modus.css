@@ -308,17 +308,16 @@ main {
 
 /* Full-width image section - CORRIGIDO */
 .full-width-image {
-    width: 100vw;
-    height: 600px;
-    margin-left: calc(-50vw + 50%); /* Corrigido para centralizar adequadamente */
-    margin-bottom: 60px;
+    width: 100%;
+    height: 700px;
+    margin: 20px 0 60px 0;
+    position: relative;
     overflow: hidden;
-    position: relative; /* Adicionado para melhor controle */
 }
 
 .full-width-image img {
     width: 100%;
-    height: 600px;
+    height: 700px;
     margin: 20px 0 60px 0;
     position: relative;
     overflow: hidden;
@@ -479,21 +478,24 @@ main {
     object-fit: contain;
 }
 
-/* Grid de 4 colunas para a segunda imagem - CORRIGIDO */
+/* Grid de 4 colunas - CORRIGIDA */
 .four-column-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 10px;
-    width: 50%;
+    width: calc(50% - 20px); /* Ajusta para o gap */
     height: 570px;
-    box-sizing: border-box; /* Adicionado para incluir padding/border no cálculo */
+    box-sizing: border-box;
+    flex-shrink: 0; /* Impede que diminua */
 }
 
 .grid-item {
     overflow: hidden;
-    width: 100%; /* Garante que ocupa toda a largura disponível */
-    height: 100%; /* Garante que ocupa toda a altura disponível */
+    width: 100%;
+    height: 100%;
+    min-height: 0; /* Importante para grid items */
+    min-width: 0; /* Importante para grid items */
 }
 
 .grid-item img {
