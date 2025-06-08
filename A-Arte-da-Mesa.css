@@ -32,12 +32,12 @@ body {
   position: relative;
 }
 
-/* Header styles - ALINHADO PERFEITAMENTE */
+/* Header styles */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 160px; /* CORRIGIDO: mesmo padding do main */
+  padding: 20px 160px;
   position: sticky;
   top: 0;
   background-color: transparent;
@@ -210,7 +210,7 @@ header {
   background-color: #f5f5f5;
 }
 
-/* Main content styles - CONTAINER PERFEITO */
+/* Main content styles */
 main {
   padding: 0 160px;
   max-width: 1440px;
@@ -228,7 +228,7 @@ main {
 .hero-image img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   background-color: #046497;
 }
 
@@ -273,117 +273,75 @@ main {
 }
 
 .project-solution,
-.project-scope {
+.project-scope,
+.project-credits {
   font-size: 14px;
   line-height: 1.8;
   color: #000;
 }
 
-/* FALP Complex Grid Section */
-.falp-grid {
+.project-solution h3,
+.project-scope h3,
+.project-credits h3 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Book spreads section */
+.book-spreads {
   margin-bottom: 80px;
 }
 
-.grid-row {
+.spreads-row {
   display: flex;
   gap: 12px;
   margin-bottom: 12px;
 }
 
-.top-row {
+.spread-item {
+  flex: 1;
   height: 400px;
-}
-
-.top-row .grid-item {
-  flex: 1;
-  height: 100%;
   overflow: hidden;
 }
 
-.top-row .grid-item img {
+.spread-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.middle-row {
-  height: 300px;
-  gap: 12px;
+/* Digital section */
+.digital-section {
+  margin-bottom: 80px;
 }
 
-.vertical-items {
-  display: flex;
-  gap: 12px;
-  flex: 0.4;
-}
-
-.vertical-item {
-  flex: 1;
-  height: 100%;
+.digital-concept-container {
+  width: 100%;
+  height: 600px;
   overflow: hidden;
 }
 
-.vertical-item img {
+.digital-concept-container video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.logo-section {
-  display: flex;
-  gap: 12px;
-  flex: 0.6;
-}
-
-.logo-item-large {
-  flex: 1;
-  height: 100%;
-  overflow: hidden;
-}
-
-.logo-item-large img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.bottom-row {
-  height: 400px;
-}
-
-.bottom-row .grid-item {
-  flex: 1;
-  height: 100%;
-  overflow: hidden;
-}
-
-.bottom-row .grid-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.text-section {
-  margin: 40px 0;
-}
-
-.text-section h2 {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.final-image {
-  width: 100%;
-  height: 750px;
-  overflow: hidden;
+/* Mobile section */
+.mobile-section {
   margin-bottom: 120px;
 }
 
-.final-image img {
+.mobile-mockups-container {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.mobile-mockups-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* Hover effects */
@@ -430,7 +388,7 @@ main {
   stroke-width: 3px !important;
 }
 
-/* Footer Styles - ALINHADO PERFEITAMENTE */
+/* Footer Styles */
 footer {
   position: relative;
   bottom: 0;
@@ -438,7 +396,7 @@ footer {
   right: 0;
   background-color: #ffffff;
   height: 200px;
-  padding: 0 160px; /* CORRIGIDO: mesmo padding do main e header */
+  padding: 0 160px;
   z-index: 1000;
   display: flex;
   align-items: flex-end;
@@ -598,60 +556,25 @@ footer *,
     margin: 15px 0 40px 0;
   }
   
-  .falp-grid {
+  .book-spreads {
     margin-bottom: 60px;
   }
   
-  .top-row, .bottom-row {
+  .spreads-row {
     flex-direction: column;
-    height: auto;
-    gap: 2px;
+    gap: 12px;
   }
   
-  .top-row .grid-item, .bottom-row .grid-item {
+  .spread-item {
     height: 250px;
   }
   
-  .middle-row {
-    flex-direction: column;
-    height: auto;
-    gap: 2px;
-  }
-  
-  .vertical-items {
-    flex-direction: column;
-    gap: 2px;
-  }
-  
-  .vertical-item {
-    height: 120px;
-  }
-  
-  .vertical-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-  }
-  
-  .logo-section {
-    flex-direction: column;
-    gap: 2px;
-  }
-  
-  .logo-item-large {
-    height: 120px;
-  }
-  
-  .logo-item-large img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-  }
-  
-  .final-image {
+  .digital-concept-container {
     height: 300px;
+  }
+  
+  .mobile-mockups-container {
+    height: 400px;
   }
   
   .back-to-top-btn {
@@ -746,20 +669,16 @@ footer *,
     margin: 10px 0 30px 0;
   }
   
-  .top-row .grid-item, .bottom-row .grid-item {
+  .spread-item {
     height: 200px;
   }
   
-  .vertical-item {
-    height: 100px;
-  }
-  
-  .logo-item-large {
-    height: 100px;
-  }
-  
-  .final-image {
+  .digital-concept-container {
     height: 250px;
+  }
+  
+  .mobile-mockups-container {
+    height: 300px;
   }
   
   .desktop-nav a {
