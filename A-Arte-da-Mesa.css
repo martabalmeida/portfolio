@@ -325,6 +325,35 @@ main {
   height: 100%;
   object-fit: cover;
 }
+.glasses-section {
+    width: 100%;
+    height: 400px;
+    background-color: #f8f8f8;
+    margin-bottom: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glasses-image {
+    max-height: 80%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .glasses-section {
+        height: 250px;
+        margin-bottom: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .glasses-section {
+        height: 200px;
+    }
+}
 
 /* Mobile section */
 .mobile-section {
