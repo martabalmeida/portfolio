@@ -307,17 +307,34 @@ main {
     text-transform: uppercase;
 }
 
-/* Image placeholder sections */
-.placeholder-section {
+/* Container para agrupar placeholder-logo e placeholder-section lado a lado */
+.placeholder-container {
+    display: flex;
+    gap: 40px; /* Espaço entre os elementos */
     margin-bottom: 60px;
     width: 100%;
+    align-items: flex-start; /* Alinha no topo */
+}
+
+/* Modificações para placeholder-logo */
+.placeholder-logo {
+    margin-bottom: 0; /* Remove margin-bottom já que agora está no container */
+    width: 50%; /* Ocupa metade da largura */
     display: flex;
     justify-content: center;
 }
 
-.placeholder-logo {
-    margin-bottom: 60px;
+.placeholder-logo img {
     width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 600px;
+}
+
+/* Modificações para placeholder-section */
+.placeholder-section {
+    margin-bottom: 0; /* Remove margin-bottom já que agora está no container */
+    width: 50%; /* Ocupa metade da largura */
     display: flex;
     justify-content: center;
 }
@@ -326,14 +343,31 @@ main {
     width: 100%;
     height: auto;
     object-fit: contain;
-    max-height: 350px;
+    max-height: 600px; /* Mesma altura máxima do placeholder-logo */
 }
 
-.placeholder-logo img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    max-height: 600px;
+/* Responsive - em mobile voltam a ficar um em cima do outro */
+@media (max-width: 768px) {
+    .placeholder-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .placeholder-logo,
+    .placeholder-section {
+        width: 100%;
+    }
+    
+    .placeholder-section img,
+    .placeholder-logo img {
+        max-height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .placeholder-container {
+        gap: 20px;
+    }
 }
 
 /* Three Logo Variations - COGITANDI left, FAZENDI center, OPERANDI right */
