@@ -447,10 +447,11 @@ main {
 /* Grid de 4 colunas para a segunda imagem */
 .four-column-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
     width: 50%;
-    height: 500px;
+    height: 570px;
 }
 
 .grid-item {
@@ -461,6 +462,7 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
 /* Back to top button */
