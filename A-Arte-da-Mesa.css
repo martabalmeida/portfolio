@@ -37,7 +37,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 160px;
+  padding: 20px 90px;
   position: sticky;
   top: 0;
   background-color: transparent;
@@ -212,7 +212,7 @@ header {
 
 /* Main content styles */
 main {
-  padding: 0 160px;
+  padding: 0 90px;
   max-width: 1440px;
   margin: 0 auto;
 }
