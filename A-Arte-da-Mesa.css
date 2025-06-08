@@ -327,54 +327,57 @@ main {
 }
 
 
-/* Seção dos copos com scroll horizontal em loop */
+/* Seção dos copos com scroll horizontal manual em loop */
 .glasses-section {
     width: 100vw; /* Largura total da viewport */
     height: 400px;
+    background-color: #f8f8f8;
     margin-bottom: 80px;
     margin-left: calc(-50vw + 50%); /* Quebra os limites do container pai */
     margin-right: calc(-50vw + 50%);
     position: relative;
-    overflow: hidden; /* Remove scrollbars */
+    overflow-x: auto; /* Permite scroll horizontal manual */
+    overflow-y: hidden;
     display: flex;
     align-items: center;
+    
+    /* Estilização da scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
 }
 
-/* Container para o movimento infinito */
+.glasses-section::-webkit-scrollbar {
+    height: 8px;
+}
+
+.glasses-section::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.glasses-section::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.glasses-section::-webkit-scrollbar-thumb:hover {
+    background-color: #999;
+}
+
+/* Container para múltiplas imagens criando o loop */
 .glasses-scroll-container {
     display: flex;
     align-items: center;
-    animation: infiniteScroll 30s linear infinite;
     white-space: nowrap;
-}
-
-/* Animação de scroll infinito */
-@keyframes infiniteScroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-/* Pausa a animação ao hover */
-.glasses-section:hover .glasses-scroll-container {
-    animation-play-state: paused;
+    min-width: fit-content;
 }
 
 .glasses-image {
     height: 80%;
     width: auto; /* Mantém proporção original */
-    min-width: 800px; /* Largura mínima */
+    min-width: 1200px; /* Largura generosa para uma boa experiência de scroll */
     object-fit: contain;
     flex-shrink: 0; /* Impede que a imagem encolha */
-    margin: 0 20px; /* Margem nas laterais para respirar */
-}
-
-/* Duplicamos a imagem para criar o efeito de loop */
-.glasses-image:nth-child(2) {
-    margin-left: 0; /* Remove margem extra da segunda imagem */
+    margin: 0 0; /* Sem margem para continuidade perfeita */
 }
 
 /* Mobile responsive */
@@ -402,6 +405,7 @@ main {
         margin: 0 10px;
     }
 }
+
 
 /* Mobile section */
 .mobile-section {
