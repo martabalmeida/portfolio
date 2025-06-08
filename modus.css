@@ -318,10 +318,10 @@ main {
 
 .full-width-image img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center; /* Centraliza a imagem */
-    display: block;
+    height: 600px;
+    margin: 20px 0 60px 0;
+    position: relative;
+    overflow: hidden;
 }
 
 /* Responsive adjustments */
