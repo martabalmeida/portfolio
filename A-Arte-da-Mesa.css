@@ -331,7 +331,6 @@ main {
 .glasses-section {
     width: 100vw; /* Largura total da viewport */
     height: 400px;
-    background-color: #f8f8f8;
     margin-bottom: 80px;
     margin-left: calc(-50vw + 50%); /* Quebra os limites do container pai */
     margin-right: calc(-50vw + 50%);
