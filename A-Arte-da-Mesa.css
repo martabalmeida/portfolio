@@ -327,48 +327,55 @@ main {
 }
 
 
-/* Seção dos copos com scroll horizontal */
+/* Seção dos copos com scroll horizontal em loop */
 .glasses-section {
     width: 100vw; /* Largura total da viewport */
     height: 400px;
+    background-color: #f8f8f8;
     margin-bottom: 80px;
     margin-left: calc(-50vw + 50%); /* Quebra os limites do container pai */
     margin-right: calc(-50vw + 50%);
     position: relative;
-    overflow-x: auto; /* Permite scroll horizontal */
-    overflow-y: hidden;
+    overflow: hidden; /* Remove scrollbars */
     display: flex;
     align-items: center;
-    
-    /* Estilização da scrollbar */
-    scrollbar-width: thin;
-    scrollbar-color: #ccc transparent;
 }
 
-.glasses-section::-webkit-scrollbar {
-    height: 8px;
+/* Container para o movimento infinito */
+.glasses-scroll-container {
+    display: flex;
+    align-items: center;
+    animation: infiniteScroll 30s linear infinite;
+    white-space: nowrap;
 }
 
-.glasses-section::-webkit-scrollbar-track {
-    background: transparent;
+/* Animação de scroll infinito */
+@keyframes infiniteScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
-.glasses-section::-webkit-scrollbar-thumb {
-    background-color: #ccc;
-    border-radius: 4px;
-}
-
-.glasses-section::-webkit-scrollbar-thumb:hover {
-    background-color: #999;
+/* Pausa a animação ao hover */
+.glasses-section:hover .glasses-scroll-container {
+    animation-play-state: paused;
 }
 
 .glasses-image {
     height: 80%;
     width: auto; /* Mantém proporção original */
-    min-width: 800px; /* Largura mínima para forçar scroll */
+    min-width: 800px; /* Largura mínima */
     object-fit: contain;
     flex-shrink: 0; /* Impede que a imagem encolha */
     margin: 0 20px; /* Margem nas laterais para respirar */
+}
+
+/* Duplicamos a imagem para criar o efeito de loop */
+.glasses-image:nth-child(2) {
+    margin-left: 0; /* Remove margem extra da segunda imagem */
 }
 
 /* Mobile responsive */
@@ -396,7 +403,6 @@ main {
         margin: 0 10px;
     }
 }
-
 
 /* Mobile section */
 .mobile-section {
