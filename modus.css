@@ -434,7 +434,7 @@ main {
 
 .two-images-item {
     width: 50%;
-    height: 600px;
+    height: 400px;
     overflow: hidden;
 }
 
@@ -450,7 +450,7 @@ main {
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     width: 50%;
-    height: 600px;
+    height: 400px;
 }
 
 .grid-item {
