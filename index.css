@@ -314,7 +314,7 @@ header.with-background {
 
 /* Overlay colors for each item - cores corretas */
 .item-1 .overlay {
-  background-color: #C1322D;
+  background-color: #ef5697;
 }
 
 .item-2 .overlay {
@@ -322,7 +322,7 @@ header.with-background {
 }
 
 .item-3 .overlay {
-  background-color: #046497;
+  background-color: #002BFF;
 }
 
 .item-4 .overlay {
@@ -338,11 +338,11 @@ header.with-background {
 }
 
 .item-7 .overlay {
-  background-color: #ef5697;
+  background-color: #C1322D;
 }
 
 .item-8 .overlay {
-  background-color: #002BFF;
+  background-color: #046497;
 }
 
 .overlay {
