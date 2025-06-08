@@ -338,7 +338,7 @@ main {
                 margin-bottom: 30px;
             }
         }
-        
+
 /* Container para agrupar placeholder-logo e placeholder-section lado a lado */
 .placeholder-container {
     display: flex;
@@ -477,7 +477,7 @@ main {
     object-fit: contain;
 }
 
-/* Grid de 4 colunas para a segunda imagem */
+/* Grid de 4 colunas para a segunda imagem - CORRIGIDO */
 .four-column-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -485,10 +485,13 @@ main {
     gap: 10px;
     width: 50%;
     height: 570px;
+    box-sizing: border-box; /* Adicionado para incluir padding/border no cálculo */
 }
 
 .grid-item {
     overflow: hidden;
+    width: 100%; /* Garante que ocupa toda a largura disponível */
+    height: 100%; /* Garante que ocupa toda a altura disponível */
 }
 
 .grid-item img {
@@ -498,6 +501,40 @@ main {
     object-position: center;
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .two-images-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .two-images-item,
+    .four-column-grid {
+        width: 100%;
+        height: auto;
+        min-height: 400px;
+    }
+    
+    .four-column-grid {
+        height: 400px; /* Altura fixa menor para mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .two-images-section {
+        gap: 20px;
+        margin-bottom: 80px;
+    }
+    
+    .four-column-grid {
+        height: 300px; /* Altura ainda menor para telas pequenas */
+        gap: 8px;
+    }
+    
+    .two-images-item {
+        height: 300px;
+    }
+}
 /* Back to top button */
 .back-to-top-btn {
     position: fixed;
