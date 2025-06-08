@@ -294,7 +294,7 @@ main {
 .spreads-row {
   display: flex;
   gap: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 40px;
 }
 
 .spread-item {
