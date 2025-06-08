@@ -306,38 +306,40 @@ main {
     text-transform: uppercase;
 }
 
-/* Full-width image section */
-        .full-width-image {
-            width: 100vw;
-            height: 600px;
-            margin-left: -160px;
-            margin-bottom: 60px;
-            overflow: hidden;
-        }
+/* Full-width image section - CORRIGIDO */
+.full-width-image {
+    width: 100vw;
+    height: 600px;
+    margin-left: calc(-50vw + 50%); /* Corrigido para centralizar adequadamente */
+    margin-bottom: 60px;
+    overflow: hidden;
+    position: relative; /* Adicionado para melhor controle */
+}
 
-        .full-width-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
+.full-width-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center; /* Centraliza a imagem */
+    display: block;
+}
 
-        /* Mobile adjustments */
-        @media (max-width: 768px) {
-            .full-width-image {
-                margin-left: -30px;
-                height: 400px;
-                margin-bottom: 40px;
-            }
-        }
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .full-width-image {
+        margin-left: calc(-50vw + 50%); /* Mantém o cálculo correto em mobile */
+        height: 400px;
+        margin-bottom: 40px;
+    }
+}
 
-        @media (max-width: 480px) {
-            .full-width-image {
-                margin-left: -20px;
-                height: 300px;
-                margin-bottom: 30px;
-            }
-        }
+@media (max-width: 480px) {
+    .full-width-image {
+        margin-left: calc(-50vw + 50%); /* Mantém o cálculo correto em mobile pequeno */
+        height: 300px;
+        margin-bottom: 30px;
+    }
+}
 
 /* Container para agrupar placeholder-logo e placeholder-section lado a lado */
 .placeholder-container {
