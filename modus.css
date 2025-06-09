@@ -458,7 +458,7 @@ main {
     object-fit: cover;
 }
 
-/* Two images section - REORGANIZADO CONFORME A IMAGEM */
+/* Two images section - CADERNOS À ESQUERDA, GRID À DIREITA */
 .two-images-section {
     display: flex;
     gap: 40px;
@@ -467,23 +467,30 @@ main {
     align-items: flex-start;
 }
 
-/* Grid de 4 credenciais agora fica à esquerda */
+/* Imagem dos cadernos fica à esquerda */
+.two-images-item {
+    width: 50%;
+    flex-shrink: 0;
+    order: 1; /* Fica à esquerda */
+}
+
+/* Grid de 4 credenciais fica à direita */
 .four-column-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas em vez de 4 */
-    grid-template-rows: repeat(2, 1fr); /* 2 linhas */
-    gap: 15px;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas como solicitado */
+    grid-template-rows: 1fr; /* 1 linha */
+    gap: 5px; /* Gap de 5px como solicitado */
     width: 50%;
     box-sizing: border-box;
     flex-shrink: 0;
     align-self: flex-start;
-    order: 1; /* Fica à esquerda */
+    order: 2; /* Fica à direita */
 }
 
 .grid-item {
     overflow: hidden;
     width: 100%;
-    aspect-ratio: 0.65; /* Proporção mais retangular para as credenciais */
+    aspect-ratio: 0.7; /* Proporção vertical para as credenciais */
     border-radius: 8px;
 }
 
@@ -493,13 +500,6 @@ main {
     object-fit: cover;
     object-position: center;
     display: block;
-}
-
-/* Imagem dos cadernos agora fica à direita */
-.two-images-item {
-    width: 50%;
-    flex-shrink: 0;
-    order: 2; /* Fica à direita */
 }
 
 .two-images-item img {
