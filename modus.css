@@ -790,8 +790,8 @@ h3 {
     
     /* Full-width sections em mobile */
     .full-width-image {
-        width: 100vw;
-        margin-left: calc(-50vw + 50%);
+        width: calc(100vw - 60px);
+        margin-left: -30px;
         height: 400px;
         margin-top: 20px;
         margin-bottom: 40px;
@@ -806,8 +806,8 @@ h3 {
     }
     
     .social-media {
-        width: 100vw;
-        margin-left: calc(-50vw + 50%);
+        width: calc(100vw - 60px);
+        margin-left: -30px;
         height: 400px;
         margin-top: 20px;
         margin-bottom: 40px;
@@ -1094,8 +1094,8 @@ h3 {
     
     /* Full-width sections em mobile pequeno */
     .full-width-image {
-        width: 100vw;
-        margin-left: calc(-50vw + 50%);
+        width: calc(100vw - 40px);
+        margin-left: -20px;
         height: 300px;
         margin-top: 20px;
         margin-bottom: 30px;
@@ -1103,8 +1103,8 @@ h3 {
     }
     
     .social-media {
-        width: 100vw;
-        margin-left: calc(-50vw + 50%);
+        width: calc(100vw - 40px);
+        margin-left: -20px;
         height: 300px;
         margin-top: 20px;
         margin-bottom: 30px;
