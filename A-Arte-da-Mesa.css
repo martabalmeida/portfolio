@@ -286,7 +286,7 @@ main {
   margin-bottom: 10px;
 }
 
-/* Book spreads section */
+/* Book spreads section - CORRIGIDO */
 .book-spreads {
   margin-bottom: 80px;
 }
@@ -297,19 +297,25 @@ main {
   margin-bottom: 40px;
 }
 
+.spreads-row:last-child {
+  margin-bottom: 0;
+}
+
 .spread-item {
   flex: 1;
   height: 400px;
   overflow: hidden;
+  border-radius: 4px;
 }
 
 .spread-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
-/* Digital section */
+/* Digital section - CORRIGIDO */
 .digital-section {
   margin-bottom: 80px;
 }
@@ -318,15 +324,17 @@ main {
   width: 100%;
   height: 600px;
   overflow: hidden;
+  border-radius: 4px;
 }
 
 .digital-concept-container video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
-
+/* Glasses section - MELHORADO */
 .glasses-section {
     width: 100%;
     height: 400px;
@@ -353,34 +361,7 @@ main {
     object-position: center;
 }
 
-/* Mobile responsive */
-@media (max-width: 768px) {
-    .glasses-section {
-        height: 250px;
-        margin-bottom: 60px;
-    }
-    
-    .glasses-image {
-        width: 100%;
-        height: auto;
-        max-height: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .glasses-section {
-        height: 200px;
-    }
-    
-    .glasses-image {
-        width: 100vw;
-        height: auto;
-        max-height: 100%;
-    }
-}
-
-
-/* Mobile section */
+/* Mobile section - CORRIGIDO */
 .mobile-section {
   margin-bottom: 120px;
 }
@@ -389,12 +370,16 @@ main {
   width: 100%;
   height: 740px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mobile-mockups-container img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  object-position: center;
 }
 
 /* Hover effects */
@@ -576,7 +561,9 @@ footer *,
   border-bottom: none !important;
 }
 
-/* Mobile responsive */
+/* MEDIA QUERIES CORRIGIDOS */
+
+/* Tablet - 768px */
 @media (max-width: 768px) {
   header {
     padding: 20px 30px;
@@ -605,29 +592,38 @@ footer *,
   }
   
   .hero-image {
-    height: 280px;
+    height: 300px;
     margin: 15px 0 40px 0;
   }
   
+  /* Book spreads - melhorado para tablet */
   .book-spreads {
     margin-bottom: 60px;
   }
   
   .spreads-row {
-    flex-direction: column;
-    gap: 12px;
+    gap: 8px;
+    margin-bottom: 30px;
   }
   
   .spread-item {
-    height: 250px;
+    height: 280px;
   }
   
+  /* Digital section */
   .digital-concept-container {
-    height: 300px;
+    height: 350px;
   }
   
+  /* Mobile mockups */
   .mobile-mockups-container {
-    height: 400px;
+    height: 450px;
+  }
+  
+  /* Glasses section */
+  .glasses-section {
+    height: 280px;
+    margin: 40px 0 50px 0;
   }
   
   .back-to-top-btn {
@@ -706,8 +702,21 @@ footer *,
   .footer-right a {
     font-size: 12px;
   }
+  
+  /* Garante que as imagens não sejam cortadas */
+  .spread-item img,
+  .digital-concept-container video {
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  /* Ajuste específico para mobile mockups */
+  .mobile-mockups-container img {
+    object-fit: contain;
+  }
 }
 
+/* Mobile - 480px */
 @media (max-width: 480px) {
   header {
     padding: 20px 20px;
@@ -718,20 +727,49 @@ footer *,
   }
   
   .hero-image {
-    height: 240px;
-    margin: 10px 0 30px 0;
+    height: 260px;
+    margin: 10px 0 35px 0;
+  }
+  
+  /* Book spreads para mobile */
+  .book-spreads {
+    margin-bottom: 50px;
+  }
+  
+  .spreads-row {
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
   }
   
   .spread-item {
-    height: 200px;
+    height: 220px;
+    width: 100%;
   }
   
+  /* Digital section */
   .digital-concept-container {
-    height: 250px;
+    height: 280px;
   }
   
+  /* Mobile mockups */
   .mobile-mockups-container {
-    height: 300px;
+    height: 350px;
+  }
+  
+  /* Glasses section */
+  .glasses-section {
+    height: 220px;
+    margin: 35px 0 45px 0;
+  }
+  
+  /* Project header spacing */
+  .project-header {
+    margin-bottom: 45px;
+  }
+  
+  .content-column {
+    gap: 25px;
   }
   
   .desktop-nav a {
@@ -784,12 +822,54 @@ footer *,
     opacity: 1 !important;
     display: block !important;
   }
+  
+  /* Correção adicional para espaçamentos consistentes */
+  .mobile-section {
+    margin-bottom: 80px;
+  }
+  
+  .digital-section {
+    margin-bottom: 60px;
+  }
 }
 
+/* Mobile pequeno - 360px */
 @media (max-width: 360px) {
+  main {
+    padding: 0 15px;
+  }
+  
   .hero-image {
+    height: 220px;
+    margin: 8px 0 30px 0;
+  }
+  
+  .spreads-row {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .spread-item {
     height: 200px;
-    margin: 8px 0 25px 0;
+  }
+  
+  .digital-concept-container {
+    height: 250px;
+  }
+  
+  .mobile-mockups-container {
+    height: 300px;
+  }
+  
+  .glasses-section {
+    height: 180px;
+    margin: 30px 0 40px 0;
+  }
+  
+  .glasses-image {
+    width: 100vw;
+    margin-left: -15px;
+    margin-right: -15px;
   }
   
   footer {
