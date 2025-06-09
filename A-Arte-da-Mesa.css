@@ -336,15 +336,6 @@ main {
     overflow-y: hidden;
     display: flex;
     align-items: center;
-    
-    /* Remove COMPLETAMENTE a scrollbar */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-}
-
-/* Remove scrollbar em navegadores WebKit (Chrome, Safari, Edge) */
-.glasses-section::-webkit-scrollbar {
-    display: none;
 }
 
 .glasses-scroll-container {

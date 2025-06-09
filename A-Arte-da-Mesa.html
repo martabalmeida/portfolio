@@ -119,9 +119,6 @@
         <div class="glasses-scroll-container">
             <img src="images/04-adm/Copos.svg" alt="Glasses illustration" class="glasses-image">
         </div>
-        <div class="glasses-scroll-container">
-            <img src="images/04-adm/Copos.svg" alt="Glasses illustration" class="glasses-image">
-        </div>
     </div>
     
         <!-- Book spreads gallery - 2x2 grid -->
@@ -210,50 +207,6 @@
     <script src="homepage-script.js"></script>
     <script src="search.js"></script>
     <script src="custom-cursor.js"></script>
-    <script>
-// Loop infinito simples com apenas UMA imagem duplicada
-const glassesSection = document.getElementById('glassesSection');
-
-if (glassesSection) {
-    let isResetting = false;
-    let lastScrollLeft = 0;
-    let imageWidth = 2000; // Largura da sua imagem
-    
-    glassesSection.addEventListener('scroll', function() {
-        if (isResetting) return;
-        
-        const scrollLeft = glassesSection.scrollLeft;
-        const scrollDirection = scrollLeft > lastScrollLeft ? 'right' : 'left';
-        lastScrollLeft = scrollLeft;
-        
-        // Quando chegar ao final da primeira imagem
-        if (scrollDirection === 'right' && scrollLeft >= imageWidth * 0.99) {
-            isResetting = true;
-            requestAnimationFrame(() => {
-                glassesSection.scrollLeft = 0; // Volta ao início
-                requestAnimationFrame(() => {
-                    isResetting = false;
-                });
-            });
-        }
-        
-        // Quando voltar ao início
-        if (scrollDirection === 'left' && scrollLeft <= 1) {
-            isResetting = true;
-            requestAnimationFrame(() => {
-                glassesSection.scrollLeft = imageWidth * 0.99;
-                requestAnimationFrame(() => {
-                    isResetting = false;
-                });
-            });
-        }
-    });
-    
-    // Posição inicial no meio
-    setTimeout(() => {
-        glassesSection.scrollLeft = imageWidth * 0.5;
-    }, 100);
-}
-</script>
+   
 </body>
 </html>
