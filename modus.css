@@ -485,12 +485,14 @@ main {
     flex-shrink: 0;
     align-self: flex-start;
     order: 2; /* Fica à direita */
+    justify-items: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
 }
 
 .grid-item {
     overflow: hidden;
     width: 100%;
-    aspect-ratio: 0.7; /* Proporção vertical para as credenciais */
+    height: 180px; /* Altura fixa para todos terem o mesmo tamanho */
     border-radius: 8px;
 }
 
