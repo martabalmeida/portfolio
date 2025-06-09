@@ -342,7 +342,7 @@ main {
 /* Full-width image section - CORRIGIDO */
 .social-media {
     width: 100%;
-    height: 800px;
+    height: 850px;
     margin: 20px 0 60px 0;
     position: relative;
     overflow: hidden;
@@ -350,7 +350,7 @@ main {
 
 .social-media img {
     width: 100%;
-    height: 800px;
+    height: 850px;
     margin: 20px 0 60px 0;
     position: relative;
     overflow: hidden;
