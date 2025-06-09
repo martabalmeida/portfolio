@@ -459,32 +459,12 @@ main {
 }
 
 /* Two images section below mobile grid */
-.two-images-section {
-    display: flex;
-    gap: 40px;
-    width: 100%;
-    margin-bottom: 120px;
-}
-
-.two-images-item {
-    width: 50%;
-    height: 570px;
-    overflow: hidden;
-}
-
-.two-images-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-/* Grid de 4 colunas - CORRIGIDA */
 .four-column-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
-    width: 50%; /* Simplificado - remove o calc que estava causando problemas */
+    gap: 15px;
+    width: 50%;
     height: 570px;
     box-sizing: border-box;
     flex-shrink: 0;
@@ -496,6 +476,7 @@ main {
     height: 100%;
     min-height: 0;
     min-width: 0;
+    border-radius: 8px; /* Adiciona bordas arredondadas como na imagem */
 }
 
 .grid-item img {
@@ -503,6 +484,29 @@ main {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    display: block;
+}
+
+/* Two images section - garantir alinhamento correto */
+.two-images-section {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    margin-bottom: 120px;
+    align-items: flex-start; /* Alinha no topo */
+}
+
+.two-images-item {
+    width: 50%;
+    height: 570px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.two-images-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 /* Responsive adjustments */
@@ -521,6 +525,7 @@ main {
     
     .four-column-grid {
         height: 400px;
+        gap: 10px;
     }
 }
 
@@ -538,8 +543,11 @@ main {
     .two-images-item {
         height: 300px;
     }
+    
+    .grid-item {
+        border-radius: 4px; /* Bordas menores em mobile */
+    }
 }
-
 /* Back to top button */
 .back-to-top-btn {
     position: fixed;
