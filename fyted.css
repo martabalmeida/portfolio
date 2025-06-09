@@ -429,6 +429,31 @@ footer {
     line-height: 1;
     font-family: 'MarundTrial', 'PPMori', sans-serif;
 }
+.footer-center-mobile {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 30px;
+    text-decoration: none;
+    color: #333;
+}
+
+.footer-line-mobile {
+    width: 250px;
+    height: 3px;
+    background-color: #333;
+}
+
+.get-in-text-top-mobile,
+.get-in-text-bottom-mobile {
+    font-size: 40px;
+    font-weight: normal;
+    color: #333;
+    line-height: 1;
+    font-family: 'MarundTrial', 'PPMori', sans-serif;
+}
 
 .footer-center:hover .get-in-text-top,
 .footer-center:hover .get-in-text-bottom {
@@ -517,6 +542,14 @@ footer {
         top: 15%;
     }
     
+    .footer-center {
+        display: none !important;
+    }
+
+    .footer-center-mobile {
+        display: flex !important;
+    }
+
     .footer-line {
         width: 350px;
         height: 4px;
@@ -592,6 +625,12 @@ footer {
         transform: none;
         margin-bottom: 15px;
         order: -1;
+    }
+
+    .footer-center-mobile {
+    display: flex;
+    order: 1;
+    margin-bottom: 40px;
     }
     
     .footer-line {
