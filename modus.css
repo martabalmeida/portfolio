@@ -753,12 +753,21 @@ h3 {
         overflow: hidden;
     }
     
+    .hero-image-container {
+        width: 100%;
+        height: 60%; /* Reduz a altura do container da imagem para 60% do hero */
+        position: relative;
+        overflow: hidden;
+    }
+    
     .hero-banner img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain; /* Muda de cover para contain para mostrar a imagem completa */
         object-position: center center;
     }
+}
+
     
     .text-operandi,
     .text-fazendi,
@@ -1047,13 +1056,13 @@ h3 {
         overflow: hidden;
     }
     
-    .hero-banner img {
+     .hero-image-container {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center center;
+        height: 50%; /* Reduz ainda mais para 50% em telas pequenas */
+        position: relative;
+        overflow: hidden;
     }
-    
+}
     /* Textos do hero banner - REDIMENSIONADOS */
     .text-operandi,
     .text-fazendi,
@@ -1187,7 +1196,12 @@ h3 {
         min-height: 160px;
         max-height: 200px;
     }
-    
+    .hero-image-container {
+        width: 100%;
+        height: 45%; /* Mínimo de 45% para telas muito pequenas */
+        position: relative;
+        overflow: hidden;
+    }
     .text-operandi,
     .text-fazendi,
     .text-cogitandi {
