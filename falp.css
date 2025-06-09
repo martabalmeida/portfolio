@@ -221,13 +221,13 @@ main {
     height: 700px;
     overflow: hidden;
     margin: 20px 0 60px 0;
+    position: relative;
 }
 
-.hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    background-color: #046497;
+.hero-image video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* mantém proporção e preenche o espaço */
 }
 
 /* Project header section */
