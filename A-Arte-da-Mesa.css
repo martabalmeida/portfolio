@@ -753,7 +753,7 @@ footer *,
   
   /* Mobile mockups */
   .mobile-mockups-container {
-    height: 350px;
+    height: 200px;
   }
   
   /* Glasses section */
@@ -924,7 +924,7 @@ footer *,
 @media (max-width: 480px) {
   /* Digital section */
   .digital-section {
-    margin-bottom: 30px; /* Reduzido ainda mais para mobile */
+    margin-bottom: 0px; /* Reduzido ainda mais para mobile */
   }
   
   /* Mobile mockups */
@@ -937,7 +937,7 @@ footer *,
 @media (max-width: 360px) {
   /* Digital section */
   .digital-section {
-    margin-bottom: 25px; /* Espaçamento mínimo para telas muito pequenas */
+    margin-bottom: 0px; /* Espaçamento mínimo para telas muito pequenas */
   }
   
   /* Mobile mockups */
