@@ -1027,7 +1027,7 @@ h3 {
     .footer-right a {
         font-size: 12px;
     }
-}
+
 
 @media (max-width: 480px) {
     /* Prevenir overflow horizontal em telas pequenas */
@@ -1183,7 +1183,7 @@ h3 {
     .get-in-text-bottom-mobile {
         font-size: 32px;
     }
-}
+
 
 @media (max-width: 360px) {
     /* Telas muito pequenas */
