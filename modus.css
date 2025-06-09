@@ -458,14 +458,14 @@ main {
     object-fit: cover;
 }
 
-/* Two images section below mobile grid */
+/* Four column grid - CORRIGIDO */
 .four-column-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 15px;
     width: 50%;
-    height: 570px;
+    aspect-ratio: 1; /* Mantém proporção quadrada */
     box-sizing: border-box;
     flex-shrink: 0;
 }
@@ -476,7 +476,7 @@ main {
     height: 100%;
     min-height: 0;
     min-width: 0;
-    border-radius: 8px; /* Adiciona bordas arredondadas como na imagem */
+    border-radius: 8px;
 }
 
 .grid-item img {
@@ -487,25 +487,23 @@ main {
     display: block;
 }
 
-/* Two images section - garantir alinhamento correto */
+/* Two images section - ajustado para melhor alinhamento */
 .two-images-section {
     display: flex;
     gap: 40px;
     width: 100%;
     margin-bottom: 120px;
-    align-items: flex-start; /* Alinha no topo */
+    align-items: flex-start;
 }
 
 .two-images-item {
     width: 50%;
-    height: 570px;
-    overflow: hidden;
     flex-shrink: 0;
 }
 
 .two-images-item img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: contain;
 }
 
@@ -519,12 +517,10 @@ main {
     .two-images-item,
     .four-column-grid {
         width: 100%;
-        height: auto;
-        min-height: 400px;
     }
     
     .four-column-grid {
-        height: 400px;
+        aspect-ratio: 1.2; /* Ligeiramente mais retangular em mobile */
         gap: 10px;
     }
 }
@@ -536,18 +532,15 @@ main {
     }
     
     .four-column-grid {
-        height: 300px;
+        aspect-ratio: 1.1;
         gap: 8px;
     }
     
-    .two-images-item {
-        height: 300px;
-    }
-    
     .grid-item {
-        border-radius: 4px; /* Bordas menores em mobile */
+        border-radius: 4px;
     }
 }
+
 /* Back to top button */
 .back-to-top-btn {
     position: fixed;
