@@ -628,19 +628,23 @@ footer *,
     background-color: #f5f5f5;
     overflow: hidden;
   }
-
+  
+  /* Mobile video handling - UPDATED */
   .hero-video {
-    display: block; /* Mostrar o vídeo */
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
+    /* Ainda esconde o vídeo em mobile para performance */
+    display: none;
   }
   
   .hero-fallback {
-    display: none; /* Esconder a imagem quando o vídeo funciona */
+    /* Garante que a imagem aparece em mobile */
+    display: block;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center; /* Centraliza a imagem */
   }
-}
   
   /* Project header mobile */
   .content-wrapper {
@@ -754,7 +758,7 @@ footer *,
     width: 20px;
     height: 20px;
   }
-
+}
 
 @media (max-width: 480px) {
   /* Header adjustments for small mobile */
