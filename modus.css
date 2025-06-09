@@ -458,7 +458,7 @@ main {
     object-fit: cover;
 }
 
-/* Two images section - ALINHAMENTO PERFEITO */
+/* Two images section - ALINHAMENTO CORRIGIDO */
 .two-images-section {
     display: flex;
     gap: 40px;
@@ -479,22 +479,23 @@ main {
     display: block;
 }
 
-/* Four column grid - 4 COLUNAS EM LINHA */
+/* Four column grid - ALINHADO COM A IMAGEM */
 .four-column-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 colunas em linha */
-    grid-template-rows: 1fr; /* Uma linha só */
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
     gap: 15px;
     width: 50%;
     box-sizing: border-box;
     flex-shrink: 0;
-    aspect-ratio: 3.2; /* Proporção mais horizontal para 4 colunas */
+    align-self: flex-start; /* Garante alinhamento no topo */
+    /* Remove aspect-ratio para que a altura se ajuste naturalmente */
 }
 
 .grid-item {
     overflow: hidden;
     width: 100%;
-    height: 100%;
+    aspect-ratio: 0.7; /* Cada chaveiro tem proporção vertical */
     border-radius: 8px;
 }
 
