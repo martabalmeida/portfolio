@@ -339,7 +339,39 @@ main {
         margin-bottom: 30px;
     }
 }
+/* Full-width image section - CORRIGIDO */
+.social-media {
+    width: 100%;
+    height: 800px;
+    margin: 20px 0 60px 0;
+    position: relative;
+    overflow: hidden;
+}
 
+.social-media img {
+    width: 100%;
+    height: 800px;
+    margin: 20px 0 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .social-media {
+        margin-left: calc(-50vw + 50%); /* Mantém o cálculo correto em mobile */
+        height: 400px;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-media {
+        margin-left: calc(-50vw + 50%); /* Mantém o cálculo correto em mobile pequeno */
+        height: 300px;
+        margin-bottom: 30px;
+    }
+}
 /* Container para agrupar placeholder-logo e placeholder-section lado a lado */
 .placeholder-container {
     display: flex;
