@@ -907,3 +907,42 @@ footer *,
     margin-top: 12px;
   }
 }
+
+/* Tablet - 768px */
+@media (max-width: 768px) {
+  /* Digital section */
+  .digital-section {
+    margin-bottom: 40px; /* Reduzido de 80px para 40px */
+  }
+  
+  /* Mobile mockups */
+  .mobile-section {
+    margin-bottom: 80px; /* Reduzido de 120px para 80px */
+  }
+}
+
+/* Mobile - 480px */
+@media (max-width: 480px) {
+  /* Digital section */
+  .digital-section {
+    margin-bottom: 30px; /* Reduzido ainda mais para mobile */
+  }
+  
+  /* Mobile mockups */
+  .mobile-section {
+    margin-bottom: 60px; /* Reduzido para mobile */
+  }
+}
+
+/* Mobile pequeno - 360px */
+@media (max-width: 360px) {
+  /* Digital section */
+  .digital-section {
+    margin-bottom: 25px; /* Espaçamento mínimo para telas muito pequenas */
+  }
+  
+  /* Mobile mockups */
+  .mobile-section {
+    margin-bottom: 50px; /* Espaçamento reduzido para telas muito pequenas */
+  }
+}
