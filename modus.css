@@ -474,34 +474,24 @@ main {
     order: 1; /* Fica à esquerda */
 }
 
-/* Grid de 4 credenciais fica à direita */
+/* Imagem única à direita (ex-grid de credenciais) */
 .four-column-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 colunas como solicitado */
-    grid-template-rows: 1fr; /* 1 linha */
-    gap: 5px; /* Gap de 5px como solicitado */
     width: 50%;
-    box-sizing: border-box;
     flex-shrink: 0;
-    align-self: flex-start;
     order: 2; /* Fica à direita */
-    justify-items: center; /* Centraliza os itens horizontalmente */
-    align-items: center; /* Centraliza os itens verticalmente */
 }
 
-.grid-item {
-    overflow: hidden;
+.four-column-grid img {
     width: 100%;
-    height: 180px; /* Altura fixa para todos terem o mesmo tamanho */
+    height: auto;
+    object-fit: contain;
+    display: block;
     border-radius: 8px;
 }
 
-.grid-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
+/* Remove os estilos dos grid-item já que não precisamos mais */
+.grid-item {
+    display: none;
 }
 
 .two-images-item img {
@@ -524,8 +514,11 @@ main {
         order: unset; /* Remove a ordem em mobile */
     }
     
-    .four-column-grid {
-        gap: 10px;
+    .four-column-grid img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        object-fit: contain; /* Garante que a imagem se vê toda */
     }
 }
 
@@ -535,12 +528,13 @@ main {
         margin-bottom: 80px;
     }
     
-    .four-column-grid {
-        gap: 8px;
-    }
-    
-    .grid-item {
-        border-radius: 4px;
+    .four-column-grid img {
+        width: 90%; /* Reduz ligeiramente para dar mais espaço */
+        height: auto;
+        max-width: 90%;
+        object-fit: contain;
+        margin: 0 auto; /* Centraliza a imagem */
+        display: block;
     }
 }
 
