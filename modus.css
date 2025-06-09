@@ -458,24 +458,44 @@ main {
     object-fit: cover;
 }
 
-/* Four column grid - CORRIGIDO */
+/* Two images section - CORRIGIDO PARA ALINHAMENTO */
+.two-images-section {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    margin-bottom: 120px;
+    align-items: stretch; /* Garante que ambos os lados tenham a mesma altura */
+}
+
+.two-images-item {
+    width: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: stretch;
+}
+
+.two-images-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Four column grid - ALTURA IGUAL À IMAGEM DO LADO */
 .four-column-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 15px;
     width: 50%;
-    aspect-ratio: 1; /* Mantém proporção quadrada */
     box-sizing: border-box;
     flex-shrink: 0;
+    height: 100%; /* Ocupa toda a altura disponível */
 }
 
 .grid-item {
     overflow: hidden;
     width: 100%;
     height: 100%;
-    min-height: 0;
-    min-width: 0;
     border-radius: 8px;
 }
 
@@ -485,26 +505,6 @@ main {
     object-fit: cover;
     object-position: center;
     display: block;
-}
-
-/* Two images section - ajustado para melhor alinhamento */
-.two-images-section {
-    display: flex;
-    gap: 40px;
-    width: 100%;
-    margin-bottom: 120px;
-    align-items: flex-start;
-}
-
-.two-images-item {
-    width: 50%;
-    flex-shrink: 0;
-}
-
-.two-images-item img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
 }
 
 /* Responsive adjustments */
@@ -540,7 +540,6 @@ main {
         border-radius: 4px;
     }
 }
-
 /* Back to top button */
 .back-to-top-btn {
     position: fixed;
