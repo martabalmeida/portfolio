@@ -788,38 +788,7 @@ h3 {
         font-size: 14px;
     }
     
-    /* Full-width sections em mobile */
-    .full-width-image {
-        width: 100vw;
-        margin-left: calc(-50vw + 50%);
-        height: 400px;
-        margin-top: 20px;
-        margin-bottom: 40px;
-        overflow: hidden;
-    }
     
-    .full-width-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-    }
-    
-    .social-media {
-        width: 100vw;
-        margin-left: calc(-50vw + 50%);
-        height: 400px;
-        margin-top: 20px;
-        margin-bottom: 40px;
-        overflow: hidden;
-    }
-    
-    .social-media img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-    }
     
     /* Content wrapper - CORRIGIDO */
     .content-wrapper {
@@ -1092,24 +1061,7 @@ h3 {
         height: 50px;
     }
     
-    /* Full-width sections em mobile pequeno */
-    .full-width-image {
-        width: 100vw;
-        margin-left: calc(-50vw + 50%);
-        height: 300px;
-        margin-top: 20px;
-        margin-bottom: 30px;
-        overflow: hidden;
-    }
     
-    .social-media {
-        width: 100vw;
-        margin-left: calc(-50vw + 50%);
-        height: 300px;
-        margin-top: 20px;
-        margin-bottom: 30px;
-        overflow: hidden;
-    }
     
     /* Placeholder container */
     .placeholder-container {
@@ -1271,5 +1223,73 @@ h3 {
     .footer-right {
         gap: 20px;
         margin-top: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Full-width sections em mobile - CORRIGIDO */
+    .full-width-image {
+        width: 100%; /* Mudança: usar 100% em vez de 100vw */
+        margin-left: 0; /* Mudança: remover o calc negativo */
+        height: 400px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        overflow: hidden;
+        display: flex; /* Adicionar para centralizar */
+        justify-content: center; /* Adicionar para centralizar */
+        align-items: center; /* Adicionar para centralizar */
+    }
+    
+    .full-width-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    .social-media {
+        width: 100%; /* Mudança: usar 100% em vez de 100vw */
+        margin-left: 0; /* Mudança: remover o calc negativo */
+        height: 400px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        overflow: hidden;
+        display: flex; /* Adicionar para centralizar */
+        justify-content: center; /* Adicionar para centralizar */
+        align-items: center; /* Adicionar para centralizar */
+    }
+    
+    .social-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Full-width sections em mobile pequeno - CORRIGIDO */
+    .full-width-image {
+        width: 100%; /* Mudança: usar 100% em vez de 100vw */
+        margin-left: 0; /* Mudança: remover o calc negativo */
+        height: 300px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .social-media {
+        width: 100%; /* Mudança: usar 100% em vez de 100vw */
+        margin-left: 0; /* Mudança: remover o calc negativo */
+        height: 300px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
