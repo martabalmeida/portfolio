@@ -753,21 +753,12 @@ h3 {
         overflow: hidden;
     }
     
-    .hero-image-container {
-        width: 100%;
-        height: 60%; /* Reduz a altura do container da imagem para 60% do hero */
-        position: relative;
-        overflow: hidden;
-    }
-    
     .hero-banner img {
         width: 100%;
         height: 100%;
-        object-fit: contain; /* Muda de cover para contain para mostrar a imagem completa */
+        object-fit: cover;
         object-position: center center;
     }
-}
-
     
     .text-operandi,
     .text-fazendi,
@@ -799,8 +790,8 @@ h3 {
     
     /* Full-width sections em mobile */
     .full-width-image {
-        width: calc(100vw - 60px);
-        margin-left: -30px;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
         height: 400px;
         margin-top: 20px;
         margin-bottom: 40px;
@@ -815,8 +806,8 @@ h3 {
     }
     
     .social-media {
-        width: calc(100vw - 60px);
-        margin-left: -30px;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
         height: 400px;
         margin-top: 20px;
         margin-bottom: 40px;
@@ -1027,7 +1018,7 @@ h3 {
     .footer-right a {
         font-size: 12px;
     }
-
+}
 
 @media (max-width: 480px) {
     /* Prevenir overflow horizontal em telas pequenas */
@@ -1056,13 +1047,13 @@ h3 {
         overflow: hidden;
     }
     
-     .hero-image-container {
+    .hero-banner img {
         width: 100%;
-        height: 50%; /* Reduz ainda mais para 50% em telas pequenas */
-        position: relative;
-        overflow: hidden;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
     }
-}
+    
     /* Textos do hero banner - REDIMENSIONADOS */
     .text-operandi,
     .text-fazendi,
@@ -1103,8 +1094,8 @@ h3 {
     
     /* Full-width sections em mobile pequeno */
     .full-width-image {
-        width: calc(100vw - 40px);
-        margin-left: -20px;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
         height: 300px;
         margin-top: 20px;
         margin-bottom: 30px;
@@ -1112,8 +1103,8 @@ h3 {
     }
     
     .social-media {
-        width: calc(100vw - 40px);
-        margin-left: -20px;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
         height: 300px;
         margin-top: 20px;
         margin-bottom: 30px;
@@ -1183,7 +1174,7 @@ h3 {
     .get-in-text-bottom-mobile {
         font-size: 32px;
     }
-
+}
 
 @media (max-width: 360px) {
     /* Telas muito pequenas */
@@ -1196,12 +1187,7 @@ h3 {
         min-height: 160px;
         max-height: 200px;
     }
-    .hero-image-container {
-        width: 100%;
-        height: 45%; /* Mínimo de 45% para telas muito pequenas */
-        position: relative;
-        overflow: hidden;
-    }
+    
     .text-operandi,
     .text-fazendi,
     .text-cogitandi {
