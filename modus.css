@@ -458,7 +458,7 @@ main {
     object-fit: cover;
 }
 
-/* Two images section - ALINHAMENTO CORRIGIDO */
+/* Two images section - REORGANIZADO CONFORME A IMAGEM */
 .two-images-section {
     display: flex;
     gap: 40px;
@@ -467,35 +467,23 @@ main {
     align-items: flex-start;
 }
 
-.two-images-item {
-    width: 50%;
-    flex-shrink: 0;
-}
-
-.two-images-item img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
-}
-
-/* Four column grid - ALINHADO COM A IMAGEM */
+/* Grid de 4 credenciais agora fica à esquerda */
 .four-column-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas em vez de 4 */
+    grid-template-rows: repeat(2, 1fr); /* 2 linhas */
     gap: 15px;
     width: 50%;
     box-sizing: border-box;
     flex-shrink: 0;
-    align-self: flex-start; /* Garante alinhamento no topo */
-    /* Remove aspect-ratio para que a altura se ajuste naturalmente */
+    align-self: flex-start;
+    order: 1; /* Fica à esquerda */
 }
 
 .grid-item {
     overflow: hidden;
     width: 100%;
-    aspect-ratio: 0.7; /* Cada chaveiro tem proporção vertical */
+    aspect-ratio: 0.65; /* Proporção mais retangular para as credenciais */
     border-radius: 8px;
 }
 
@@ -504,6 +492,20 @@ main {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    display: block;
+}
+
+/* Imagem dos cadernos agora fica à direita */
+.two-images-item {
+    width: 50%;
+    flex-shrink: 0;
+    order: 2; /* Fica à direita */
+}
+
+.two-images-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
     display: block;
 }
 
@@ -517,10 +519,10 @@ main {
     .two-images-item,
     .four-column-grid {
         width: 100%;
+        order: unset; /* Remove a ordem em mobile */
     }
     
     .four-column-grid {
-        aspect-ratio: 1.2; /* Ligeiramente mais retangular em mobile */
         gap: 10px;
     }
 }
@@ -532,7 +534,6 @@ main {
     }
     
     .four-column-grid {
-        aspect-ratio: 1.1;
         gap: 8px;
     }
     
