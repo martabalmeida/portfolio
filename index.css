@@ -691,7 +691,70 @@ footer {
   .footer-center-mobile {
     display: flex !important;
   }
+
+   .grid-item video {
+    /* Remove todos os controles de vídeo */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    
+    /* Remove botão de play overlay no iOS/Safari */
+    -webkit-media-controls: none;
+    -webkit-media-controls-panel: none;
+    -webkit-media-controls-play-button: none;
+    -webkit-media-controls-start-playback-button: none;
+    
+    /* Remove controles no Firefox */
+    -moz-media-controls: none;
+  }
+  
+  /* Alternativa mais específica se a anterior não funcionar */
+  .grid-item video::-webkit-media-controls {
+    display: none !important;
+  }
+  
+  .grid-item video::-webkit-media-controls-panel {
+    display: none !important;
+  }
+  
+  .grid-item video::-webkit-media-controls-play-button {
+    display: none !important;
+  }
+  
+  .grid-item video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+  }
+  
+  .grid-item video::-webkit-media-controls-enclosure {
+    display: none !important;
+  }
+  
+  .grid-item video::-webkit-media-controls-timeline {
+    display: none !important;
+  }
+  
+  .grid-item video::-webkit-media-controls-current-time-display {
+    display: none !important;
+  }
+  
+  .grid-item video::-webkit-media-controls-time-remaining-display {
+    display: none !important;
+  }
+  
+  .grid-item video::-webkit-media-controls-mute-button {
+    display: none !important;
+  }
+  
+  .grid-item video::-webkit-media-controls-toggle-closed-captions-button {
+    display: none !important;
+  }
+  
+  .grid-item video::-webkit-media-controls-volume-slider {
+    display: none !important;
+  }
 }
+
 
 @media (max-width: 480px) {
   .hero-text {
