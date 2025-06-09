@@ -598,13 +598,7 @@ footer {
     border-radius: 0 !important;
     overflow: visible !important;
   }
-  .item-6 .item-content {
-    height: 200px; /* ou a altura que desejar, ex: 150px, 120px, etc. */
-  }
-
-  .item-6 img {
-    height: 200px !important; /* mesma altura do container */
-  }
+  
   .item-content {
     position: relative;
     width: 100%;
